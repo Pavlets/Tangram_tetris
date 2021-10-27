@@ -266,7 +266,7 @@ namespace TangramTetris {
 			// 
 			// button13
 			// 
-			this->button13->Location = System::Drawing::Point(418, 303);
+			this->button13->Location = System::Drawing::Point(426, 303);
 			this->button13->Name = L"button13";
 			this->button13->Size = System::Drawing::Size(118, 22);
 			this->button13->TabIndex = 18;
