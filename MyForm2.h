@@ -237,7 +237,7 @@ namespace TangramTetris {
 			// 
 			this->button11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button11->Location = System::Drawing::Point(338, 204);
+			this->button11->Location = System::Drawing::Point(371, 204);
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(102, 60);
 			this->button11->TabIndex = 15;
