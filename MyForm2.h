@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "MyForm5.h"
+#include "MyForm6.h"
 
 namespace TangramTetris {
 
@@ -151,6 +152,7 @@ namespace TangramTetris {
 			this->button1->TabIndex = 5;
 			this->button1->Text = L"Рівень 1";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm2::button1_Click);
 			// 
 			// button2
 			// 
@@ -298,6 +300,7 @@ namespace TangramTetris {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"MyForm2";
 			this->Text = L"Tangram Tetris";
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &MyForm2::MyForm2_FormClosed);
@@ -315,6 +318,10 @@ namespace TangramTetris {
 private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
 	MyForm5^ Records = gcnew MyForm5();
 	Records->Show();
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	MyForm6^ Level1 = gcnew MyForm6();
+	Level1->Show();
 }
 };
 }

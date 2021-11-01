@@ -158,6 +158,7 @@ namespace TangramTetris {
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"MyForm4";
 			this->Text = L"MyForm4";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
