@@ -320,7 +320,10 @@ private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ 
 	Records->Show();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	MyForm6^ Level1 = gcnew MyForm6();
+	Image^ img_back = Image::FromFile("B1.jpg");
+	int field_size = 5;
+
+	MyForm6^ Level1 = gcnew MyForm6(img_back, field_size);
 	Level1->Show();
 }
 };

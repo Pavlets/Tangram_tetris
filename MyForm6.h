@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+using namespace std;
 
 namespace TangramTetris {
 
@@ -15,13 +17,26 @@ namespace TangramTetris {
 	public ref class MyForm6 : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm6(void)
+		/*MyForm6(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: добавьте код конструктора
 			//
+		}*/
+		MyForm6(Image^ img_back, int field_size)
+		{
+			InitializeComponent();
+			//Обрабатываем данные
+			//Или записываем их в поле
+			this->field_size = field_size;
+			this->img_back = img_back;
 		}
+		Image^ img_back;
+
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+	public:
+		int field_size;
 
 	protected:
 		/// <summary>
@@ -35,7 +50,7 @@ namespace TangramTetris {
 			}
 		}
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
-	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+
 	protected:
 
 	private:
@@ -59,7 +74,7 @@ namespace TangramTetris {
 			// 
 			this->flowLayoutPanel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->flowLayoutPanel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->flowLayoutPanel1->Location = System::Drawing::Point(489, 144);
+			this->flowLayoutPanel1->Location = System::Drawing::Point(476, 181);
 			this->flowLayoutPanel1->Margin = System::Windows::Forms::Padding(4);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
 			this->flowLayoutPanel1->Size = System::Drawing::Size(293, 231);
@@ -67,34 +82,52 @@ namespace TangramTetris {
 			// 
 			// tableLayoutPanel1
 			// 
+			this->tableLayoutPanel1->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->tableLayoutPanel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->tableLayoutPanel1->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Single;
-			this->tableLayoutPanel1->ColumnCount = 4;
+			this->tableLayoutPanel1->ColumnCount = 10;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				25)));
+				10)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				25)));
+				10)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				22.71663F)));
+				10)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				27.63466F)));
-			this->tableLayoutPanel1->Cursor = System::Windows::Forms::Cursors::Default;
-			this->tableLayoutPanel1->Location = System::Drawing::Point(31, 48);
-			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(4);
+				10)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				10)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				10)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				10)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				10)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				10)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				10)));
+			this->tableLayoutPanel1->Location = System::Drawing::Point(12, 12);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
-			this->tableLayoutPanel1->RowCount = 4;
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 25)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 25)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 25)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 25)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(428, 327);
+			this->tableLayoutPanel1->RowCount = 10;
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(437, 437);
 			this->tableLayoutPanel1->TabIndex = 1;
 			// 
 			// MyForm6
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(799, 409);
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(799, 461);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->flowLayoutPanel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
@@ -107,8 +140,12 @@ namespace TangramTetris {
 		}
 #pragma endregion
 	private: System::Void MyForm6_Load(System::Object^ sender, System::EventArgs^ e) {
-		BackgroundImageLayout = img__back;
-		int field_of_play[yp][yp];
+		BackgroundImage = img_back;
+
+		tableLayoutPanel1->ColumnCount = field_size;
+		tableLayoutPanel1->RowCount = field_size;
+
+		/*int field_of_play[yp][yp];
 		ii = 0;
 		for (int i = 0; i < yp; i++)
 			for (int j = 0; j < yp; j++) {
@@ -121,7 +158,7 @@ namespace TangramTetris {
 			for (int j = 0; j < yf; j++) {
 				field_of_play[i][j] = yfm[ii];
 				ii++;
-			}
+			}*/
 	}
 	};
 }
