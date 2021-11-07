@@ -73,10 +73,10 @@ namespace TangramTetris {
 		{
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -137,39 +137,22 @@ namespace TangramTetris {
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Фiгури";
 			// 
-			// button1
+			// button4
 			// 
-			this->button1->BackColor = System::Drawing::Color::Red;
-			this->button1->Cursor = System::Windows::Forms::Cursors::NoMove2D;
-			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::Red;
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Red;
-			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->button1->Location = System::Drawing::Point(22, 47);
-			this->button1->Margin = System::Windows::Forms::Padding(0);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(25, 25);
-			this->button1->TabIndex = 3;
-			this->button1->UseVisualStyleBackColor = false;
-			// 
-			// button2
-			// 
-			this->button2->BackColor = System::Drawing::Color::Red;
-			this->button2->Cursor = System::Windows::Forms::Cursors::NoMove2D;
-			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::Red;
-			this->button2->FlatAppearance->BorderSize = 0;
-			this->button2->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Red;
-			this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->button2->Location = System::Drawing::Point(22, 71);
-			this->button2->Margin = System::Windows::Forms::Padding(0);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(25, 25);
-			this->button2->TabIndex = 4;
-			this->button2->UseVisualStyleBackColor = false;
+			this->button4->BackColor = System::Drawing::Color::Red;
+			this->button4->Cursor = System::Windows::Forms::Cursors::NoMove2D;
+			this->button4->FlatAppearance->BorderColor = System::Drawing::Color::Red;
+			this->button4->FlatAppearance->BorderSize = 0;
+			this->button4->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Red;
+			this->button4->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button4->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->button4->Location = System::Drawing::Point(22, 120);
+			this->button4->Margin = System::Windows::Forms::Padding(0);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(25, 25);
+			this->button4->TabIndex = 6;
+			this->button4->UseVisualStyleBackColor = false;
 			// 
 			// button3
 			// 
@@ -188,22 +171,39 @@ namespace TangramTetris {
 			this->button3->TabIndex = 5;
 			this->button3->UseVisualStyleBackColor = false;
 			// 
-			// button4
+			// button2
 			// 
-			this->button4->BackColor = System::Drawing::Color::Red;
-			this->button4->Cursor = System::Windows::Forms::Cursors::NoMove2D;
-			this->button4->FlatAppearance->BorderColor = System::Drawing::Color::Red;
-			this->button4->FlatAppearance->BorderSize = 0;
-			this->button4->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Red;
-			this->button4->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
-			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button4->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->button4->Location = System::Drawing::Point(22, 120);
-			this->button4->Margin = System::Windows::Forms::Padding(0);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(25, 25);
-			this->button4->TabIndex = 6;
-			this->button4->UseVisualStyleBackColor = false;
+			this->button2->BackColor = System::Drawing::Color::Red;
+			this->button2->Cursor = System::Windows::Forms::Cursors::NoMove2D;
+			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::Red;
+			this->button2->FlatAppearance->BorderSize = 0;
+			this->button2->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Red;
+			this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->button2->Location = System::Drawing::Point(22, 71);
+			this->button2->Margin = System::Windows::Forms::Padding(0);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(25, 25);
+			this->button2->TabIndex = 4;
+			this->button2->UseVisualStyleBackColor = false;
+			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::Red;
+			this->button1->Cursor = System::Windows::Forms::Cursors::NoMove2D;
+			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::Red;
+			this->button1->FlatAppearance->BorderSize = 0;
+			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Red;
+			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->button1->Location = System::Drawing::Point(22, 47);
+			this->button1->Margin = System::Windows::Forms::Padding(0);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(25, 25);
+			this->button1->TabIndex = 3;
+			this->button1->UseVisualStyleBackColor = false;
 			// 
 			// MyForm6
 			// 
