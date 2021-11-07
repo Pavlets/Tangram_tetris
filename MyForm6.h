@@ -17,14 +17,13 @@ namespace TangramTetris {
 	public ref class MyForm6 : public System::Windows::Forms::Form
 	{
 	public:
-		/*MyForm6(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: добавьте код конструктора
-			//
-		}*/
-		MyForm6(String^ level_name, Image^ img_back, int field_size)
+		int F_1, F_2, F_3, F_4, F_5, F_6, F_7;
+		int field_size;
+		Image^ img_back;
+		String^ level_name;
+		String^ field;
+		bool ButtonF1Click = false;
+		MyForm6(String^ level_name, Image^ img_back, int field_size, String^ field, int F_1,  int F_2, int F_3, int F_4, int F_5, int F_6, int F_7)
 		{
 			InitializeComponent();
 			//Обрабатываем данные
@@ -32,10 +31,14 @@ namespace TangramTetris {
 			this->level_name = level_name;
 			this->field_size = field_size;
 			this->img_back = img_back;
+			this->F_1 = F_1;
+			this->F_2 = F_2;
+			this->F_3 = F_3;
+			this->F_4 = F_4;
+			this->F_5 = F_5;
+			this->F_6 = F_6;
+			this->F_7 = F_7;
 		}
-		Image^ img_back;
-		String^ level_name;
-		bool ButtonF1Click = false;
 
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
@@ -44,13 +47,10 @@ namespace TangramTetris {
 	private: System::Windows::Forms::Label^ F1_count;
 
 
-
-
 	private: System::Windows::Forms::Button^ ButtonF3_2;
 
 	private: System::Windows::Forms::Button^ ButtonF3_1;
 	private: System::Windows::Forms::Button^ ButtonF7_1;
-
 
 	private: System::Windows::Forms::Button^ ButtonF4_1;
 	private: System::Windows::Forms::Button^ ButtonF4_2;
@@ -65,18 +65,10 @@ namespace TangramTetris {
 	private: System::Windows::Forms::Label^ F5_count;
 	private: System::Windows::Forms::Label^ F6_count;
 
-
-
 	private: System::Windows::Forms::Label^ F3_count;
 
 	private: System::Windows::Forms::Label^ F2_count;
 
-
-
-
-
-	public:
-		int field_size;
 	protected:
 		/// <summary>
 		/// Освободить все используемые ресурсы.

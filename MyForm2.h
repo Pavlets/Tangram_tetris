@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "MyForm5.h"
 #include "MyForm6.h"
+#include "main.h"
 
 namespace TangramTetris {
 
@@ -11,13 +12,6 @@ namespace TangramTetris {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Xml;
-
-
-	class GetData {
-	public:
-		int f_1, f_2, f_3, f_4, f_5, f_6, f_7;
-		int size_field;
-	};
 
 	/// <summary>
 	/// Сводка для MyForm2
@@ -350,9 +344,8 @@ private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ 
 	Records->Show();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ level_name = "Medium Level 1";
+	String^ level_name = "Light Level 1";
 	Image^ img_back = Image::FromFile("B1.jpg");
-	int field_size = 4;/////
 
 	level = "1";
 	GetData obj;
@@ -372,42 +365,42 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 
 					if ((inner->Name == "figura1") && (inner->NodeType == XmlNodeType::Element)) {
 						inner->Read();
-						obj.f_1 = Convert::ToInt32(inner->Value);
+						obj.F_1 = Convert::ToInt32(inner->Value);
 					}
 
 					if ((inner->Name == "figura2") && (inner->NodeType == XmlNodeType::Element)) {
 						inner->Read();
-						obj.f_2 = Convert::ToInt32(inner->Value);
+						obj.F_2 = Convert::ToInt32(inner->Value);
 					}
 
 					if ((inner->Name == "figura3") && (inner->NodeType == XmlNodeType::Element)) {
 						inner->Read();
-						obj.f_3 = Convert::ToInt32(inner->Value);
+						obj.F_3 = Convert::ToInt32(inner->Value);
 					}
 
 					if ((inner->Name == "figura4") && (inner->NodeType == XmlNodeType::Element)) {
 						inner->Read();
-						obj.f_4 = Convert::ToInt32(inner->Value);
+						obj.F_4 = Convert::ToInt32(inner->Value);
 					}
 
 					if ((inner->Name == "figura5") && (inner->NodeType == XmlNodeType::Element)) {
 						inner->Read();
-						obj.f_5 = Convert::ToInt32(inner->Value);
+						obj.F_5 = Convert::ToInt32(inner->Value);
 					}
 
 					if ((inner->Name == "figura6") && (inner->NodeType == XmlNodeType::Element)) {
 						inner->Read();
-						obj.f_6 = Convert::ToInt32(inner->Value);
+						obj.F_6 = Convert::ToInt32(inner->Value);
 					}
 
 					if ((inner->Name == "figura7") && (inner->NodeType == XmlNodeType::Element)) {
 						inner->Read();
-						obj.f_7 = Convert::ToInt32(inner->Value);
+						obj.F_7 = Convert::ToInt32(inner->Value);
 					}
 
 					if ((inner->Name == "sizefield") && (inner->NodeType == XmlNodeType::Element)) {
 						inner->Read();
-						obj.size_field = Convert::ToInt32(inner->Value);
+						obj.field_size = Convert::ToInt32(inner->Value);
 					}
 
 					if ((inner->Name == "field") && (inner->NodeType == XmlNodeType::Element)) {
@@ -420,8 +413,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	}
 
 
-
-	MyForm6^ Level1 = gcnew MyForm6(level_name, img_back, field_size);
+	MyForm6^ Level1 = gcnew MyForm6(level_name, img_back, obj.field_size, field, obj.F_1, obj.F_2, obj.F_3, obj.F_4, obj.F_5, obj.F_6, obj.F_7);
 	Level1->Show();
 }
 private: System::Void MyForm2_Load(System::Object^ sender, System::EventArgs^ e) {
