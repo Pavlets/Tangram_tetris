@@ -74,6 +74,7 @@ namespace TangramTetris {
 
 
 
+
 	public:
 		int field_size;
 	protected:
@@ -490,12 +491,14 @@ namespace TangramTetris {
 
 		tableLayoutPanel1->ColumnCount = field_size;
 		tableLayoutPanel1->RowCount = field_size;
-		for (int i = 0; i < field_size * field_size; i++) {
-			PictureBox^ picture = gcnew PictureBox();
-			picture->Image = Image::FromFile("F1Color.png");
-			picture->Dock = DockStyle::Fill;
-			tableLayoutPanel1->Controls->Add(picture);
-		}
+		for (int i = 0; i < field_size; i++)
+			for (int j = 0; j < field_size; j++) {
+				PictureBox^ picture = gcnew PictureBox();
+				picture->Dock = DockStyle::Fill;
+				tableLayoutPanel1->Controls->Add(picture);
+				tableLayoutPanel1->GetControlFromPosition(j, i)->BackColor = Color::White;
+			}
+		//tableLayoutPanel1->GetControlFromPosition(2, 2)->BackColor = Color::White;
 
 		/*int field_of_play[yp][yp];
 		ii = 0;
@@ -507,10 +510,13 @@ namespace TangramTetris {
 	}
 	private: System::Void tableLayoutPanel1_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 		//tableLayoutPanel1.cell
-		//tableLayoutPanel1.GetControlFromPosition(1, 1).BackColor = Color.CornflowerBlue;
+		//tableLayoutPanel1->GetControlFromPosition(1, 1)->BackColor = Color::Blue;
 	}
 	private: System::Void ButtonF1_Click(System::Object^ sender, System::EventArgs^ e) {
 		ButtonF1Click = true;
+	}
+	private: System::Void pictureBox_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		F1_count->Text = "yes";
 	}
 };
 }

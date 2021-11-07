@@ -99,9 +99,9 @@ namespace TangramTetris {
 			this->label1->Location = System::Drawing::Point(33, 32);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(210, 58);
+			this->label1->Size = System::Drawing::Size(184, 58);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Середній рівень \r\nскладності";
+			this->label1->Text = L"Легкий рівень \r\nскладності";
 			// 
 			// label2
 			// 
@@ -133,9 +133,9 @@ namespace TangramTetris {
 			this->label4->Location = System::Drawing::Point(33, 130);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(217, 58);
+			this->label4->Size = System::Drawing::Size(210, 58);
 			this->label4->TabIndex = 3;
-			this->label4->Text = L"Складний рівень \r\nскладності";
+			this->label4->Text = L"Середній рівень \r\nскладності";
 			// 
 			// label5
 			// 
