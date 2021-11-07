@@ -498,7 +498,6 @@ namespace TangramTetris {
 				tableLayoutPanel1->Controls->Add(picture);
 				tableLayoutPanel1->GetControlFromPosition(j, i)->BackColor = Color::White;
 			}
-		//tableLayoutPanel1->GetControlFromPosition(2, 2)->BackColor = Color::White;
 
 		/*int field_of_play[yp][yp];
 		ii = 0;
