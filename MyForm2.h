@@ -341,10 +341,11 @@ private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ 
 	Records->Show();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ level_name = "Medium Level 1";
 	Image^ img_back = Image::FromFile("B1.jpg");
 	int field_size = 4;
 
-	MyForm6^ Level1 = gcnew MyForm6(img_back, field_size);
+	MyForm6^ Level1 = gcnew MyForm6(level_name, img_back, field_size);
 	Level1->Show();
 }
 private: System::Void MyForm2_Load(System::Object^ sender, System::EventArgs^ e) {
