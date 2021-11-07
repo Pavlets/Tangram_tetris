@@ -45,7 +45,7 @@ namespace TangramTetris {
 
 
 
-	private: System::Windows::Forms::Label^ label2;
+
 	private: System::Windows::Forms::Button^ ButtonF3_2;
 
 	private: System::Windows::Forms::Button^ ButtonF3_1;
@@ -59,6 +59,18 @@ namespace TangramTetris {
 	private: System::Windows::Forms::Button^ ButtonF5_1;
 	private: System::Windows::Forms::Button^ ButtonF5_2;
 	private: System::Windows::Forms::Button^ ButtonF7_2;
+	private: System::Windows::Forms::Label^ F7_count;
+
+	private: System::Windows::Forms::Label^ F4_count;
+	private: System::Windows::Forms::Label^ F5_count;
+	private: System::Windows::Forms::Label^ F6_count;
+
+
+
+	private: System::Windows::Forms::Label^ F3_count;
+
+	private: System::Windows::Forms::Label^ F2_count;
+
 
 
 
@@ -107,8 +119,13 @@ namespace TangramTetris {
 			this->ButtonF3_1 = (gcnew System::Windows::Forms::Button());
 			this->ButtonF2 = (gcnew System::Windows::Forms::Button());
 			this->ButtonF1 = (gcnew System::Windows::Forms::Button());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->F1_count = (gcnew System::Windows::Forms::Label());
+			this->F2_count = (gcnew System::Windows::Forms::Label());
+			this->F3_count = (gcnew System::Windows::Forms::Label());
+			this->F6_count = (gcnew System::Windows::Forms::Label());
+			this->F5_count = (gcnew System::Windows::Forms::Label());
+			this->F4_count = (gcnew System::Windows::Forms::Label());
+			this->F7_count = (gcnew System::Windows::Forms::Label());
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -159,8 +176,15 @@ namespace TangramTetris {
 			// 
 			this->groupBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->groupBox1->Controls->Add(this->F7_count);
+			this->groupBox1->Controls->Add(this->F4_count);
+			this->groupBox1->Controls->Add(this->F5_count);
+			this->groupBox1->Controls->Add(this->F6_count);
+			this->groupBox1->Controls->Add(this->F3_count);
+			this->groupBox1->Controls->Add(this->F2_count);
 			this->groupBox1->Controls->Add(this->ButtonF6_1);
 			this->groupBox1->Controls->Add(this->ButtonF6_2);
+			this->groupBox1->Controls->Add(this->F1_count);
 			this->groupBox1->Controls->Add(this->ButtonF5_1);
 			this->groupBox1->Controls->Add(this->ButtonF5_2);
 			this->groupBox1->Controls->Add(this->ButtonF7_2);
@@ -187,7 +211,7 @@ namespace TangramTetris {
 			this->ButtonF6_1->FlatAppearance->BorderSize = 0;
 			this->ButtonF6_1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonF6_1->ForeColor = System::Drawing::Color::Black;
-			this->ButtonF6_1->Location = System::Drawing::Point(153, 212);
+			this->ButtonF6_1->Location = System::Drawing::Point(178, 212);
 			this->ButtonF6_1->Margin = System::Windows::Forms::Padding(0);
 			this->ButtonF6_1->Name = L"ButtonF6_1";
 			this->ButtonF6_1->Size = System::Drawing::Size(25, 50);
@@ -202,7 +226,7 @@ namespace TangramTetris {
 			this->ButtonF6_2->FlatAppearance->BorderSize = 0;
 			this->ButtonF6_2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonF6_2->ForeColor = System::Drawing::Color::Black;
-			this->ButtonF6_2->Location = System::Drawing::Point(178, 181);
+			this->ButtonF6_2->Location = System::Drawing::Point(203, 181);
 			this->ButtonF6_2->Margin = System::Windows::Forms::Padding(0);
 			this->ButtonF6_2->Name = L"ButtonF6_2";
 			this->ButtonF6_2->Size = System::Drawing::Size(25, 50);
@@ -247,7 +271,7 @@ namespace TangramTetris {
 			this->ButtonF7_2->FlatAppearance->BorderSize = 0;
 			this->ButtonF7_2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonF7_2->ForeColor = System::Drawing::Color::Black;
-			this->ButtonF7_2->Location = System::Drawing::Point(308, 212);
+			this->ButtonF7_2->Location = System::Drawing::Point(338, 213);
 			this->ButtonF7_2->Margin = System::Windows::Forms::Padding(0);
 			this->ButtonF7_2->Name = L"ButtonF7_2";
 			this->ButtonF7_2->Size = System::Drawing::Size(25, 25);
@@ -262,7 +286,7 @@ namespace TangramTetris {
 			this->ButtonF7_1->FlatAppearance->BorderSize = 0;
 			this->ButtonF7_1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonF7_1->ForeColor = System::Drawing::Color::Black;
-			this->ButtonF7_1->Location = System::Drawing::Point(283, 237);
+			this->ButtonF7_1->Location = System::Drawing::Point(313, 237);
 			this->ButtonF7_1->Margin = System::Windows::Forms::Padding(0);
 			this->ButtonF7_1->Name = L"ButtonF7_1";
 			this->ButtonF7_1->Size = System::Drawing::Size(75, 25);
@@ -277,7 +301,7 @@ namespace TangramTetris {
 			this->ButtonF4_1->FlatAppearance->BorderSize = 0;
 			this->ButtonF4_1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonF4_1->ForeColor = System::Drawing::Color::Black;
-			this->ButtonF4_1->Location = System::Drawing::Point(338, 116);
+			this->ButtonF4_1->Location = System::Drawing::Point(338, 117);
 			this->ButtonF4_1->Margin = System::Windows::Forms::Padding(0);
 			this->ButtonF4_1->Name = L"ButtonF4_1";
 			this->ButtonF4_1->Size = System::Drawing::Size(25, 25);
@@ -307,7 +331,7 @@ namespace TangramTetris {
 			this->ButtonF3_2->FlatAppearance->BorderSize = 0;
 			this->ButtonF3_2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonF3_2->ForeColor = System::Drawing::Color::Black;
-			this->ButtonF3_2->Location = System::Drawing::Point(263, 116);
+			this->ButtonF3_2->Location = System::Drawing::Point(263, 117);
 			this->ButtonF3_2->Margin = System::Windows::Forms::Padding(0);
 			this->ButtonF3_2->Name = L"ButtonF3_2";
 			this->ButtonF3_2->Size = System::Drawing::Size(25, 25);
@@ -364,27 +388,82 @@ namespace TangramTetris {
 			this->ButtonF1->UseVisualStyleBackColor = false;
 			this->ButtonF1->Click += gcnew System::EventHandler(this, &MyForm6::ButtonF1_Click);
 			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Medium", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->label2->Location = System::Drawing::Point(628, 58);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(37, 25);
-			this->label2->TabIndex = 6;
-			this->label2->Text = L"X1";
-			// 
 			// F1_count
 			// 
 			this->F1_count->AutoSize = true;
 			this->F1_count->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Medium", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->F1_count->Location = System::Drawing::Point(561, 25);
+			this->F1_count->Location = System::Drawing::Point(51, 116);
 			this->F1_count->Name = L"F1_count";
 			this->F1_count->Size = System::Drawing::Size(37, 25);
 			this->F1_count->TabIndex = 5;
 			this->F1_count->Text = L"X1";
+			// 
+			// F2_count
+			// 
+			this->F2_count->AutoSize = true;
+			this->F2_count->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Medium", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->F2_count->Location = System::Drawing::Point(171, 116);
+			this->F2_count->Name = L"F2_count";
+			this->F2_count->Size = System::Drawing::Size(37, 25);
+			this->F2_count->TabIndex = 17;
+			this->F2_count->Text = L"X1";
+			// 
+			// F3_count
+			// 
+			this->F3_count->AutoSize = true;
+			this->F3_count->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Medium", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->F3_count->Location = System::Drawing::Point(291, 116);
+			this->F3_count->Name = L"F3_count";
+			this->F3_count->Size = System::Drawing::Size(37, 25);
+			this->F3_count->TabIndex = 18;
+			this->F3_count->Text = L"X1";
+			// 
+			// F6_count
+			// 
+			this->F6_count->AutoSize = true;
+			this->F6_count->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Medium", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->F6_count->Location = System::Drawing::Point(231, 235);
+			this->F6_count->Name = L"F6_count";
+			this->F6_count->Size = System::Drawing::Size(37, 25);
+			this->F6_count->TabIndex = 19;
+			this->F6_count->Text = L"X1";
+			// 
+			// F5_count
+			// 
+			this->F5_count->AutoSize = true;
+			this->F5_count->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Medium", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->F5_count->Location = System::Drawing::Point(76, 235);
+			this->F5_count->Name = L"F5_count";
+			this->F5_count->Size = System::Drawing::Size(37, 25);
+			this->F5_count->TabIndex = 20;
+			this->F5_count->Text = L"X1";
+			// 
+			// F4_count
+			// 
+			this->F4_count->AutoSize = true;
+			this->F4_count->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Medium", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->F4_count->Location = System::Drawing::Point(391, 116);
+			this->F4_count->Name = L"F4_count";
+			this->F4_count->Size = System::Drawing::Size(37, 25);
+			this->F4_count->TabIndex = 21;
+			this->F4_count->Text = L"X1";
+			// 
+			// F7_count
+			// 
+			this->F7_count->AutoSize = true;
+			this->F7_count->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Medium", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->F7_count->Location = System::Drawing::Point(391, 235);
+			this->F7_count->Name = L"F7_count";
+			this->F7_count->Size = System::Drawing::Size(37, 25);
+			this->F7_count->TabIndex = 22;
+			this->F7_count->Text = L"X1";
 			// 
 			// MyForm6
 			// 
@@ -394,16 +473,14 @@ namespace TangramTetris {
 			this->ClientSize = System::Drawing::Size(932, 461);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->tableLayoutPanel1);
-			this->Controls->Add(this->F1_count);
-			this->Controls->Add(this->label2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MyForm6";
 			this->Text = L"Level 1";
 			this->Load += gcnew System::EventHandler(this, &MyForm6::MyForm6_Load);
 			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
