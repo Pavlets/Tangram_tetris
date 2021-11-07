@@ -10,6 +10,14 @@ namespace TangramTetris {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Xml;
+
+
+	class GetData {
+	public:
+		int f_1, f_2, f_3, f_4, f_5, f_6, f_7;
+		int size_field;
+	};
 
 	/// <summary>
 	/// Сводка для MyForm2
@@ -17,6 +25,7 @@ namespace TangramTetris {
 	public ref class MyForm2 : public System::Windows::Forms::Form
 	{
 	public:
+		String^ level;
 		MyForm2(void)
 		{
 			InitializeComponent();
@@ -343,17 +352,80 @@ private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ 
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ level_name = "Medium Level 1";
 	Image^ img_back = Image::FromFile("B1.jpg");
-	int field_size = 4;
+	int field_size = 4;/////
+
+	level = "1";
+	GetData obj;
+	String^ field;
+
+	XmlTextReader reader("xmlfile.xml");
+	reader.ReadToFollowing("alldata");
+	if (reader.ReadToDescendant("data")) {
+		String^ Number;
+
+		do {
+			Number = reader.GetAttribute("number");
+			if (Number == level) {
+				XmlReader^ inner = reader.ReadSubtree();
+
+				while (inner->Read()) {
+
+					if ((inner->Name == "figura1") && (inner->NodeType == XmlNodeType::Element)) {
+						inner->Read();
+						obj.f_1 = Convert::ToInt32(inner->Value);
+					}
+
+					if ((inner->Name == "figura2") && (inner->NodeType == XmlNodeType::Element)) {
+						inner->Read();
+						obj.f_2 = Convert::ToInt32(inner->Value);
+					}
+
+					if ((inner->Name == "figura3") && (inner->NodeType == XmlNodeType::Element)) {
+						inner->Read();
+						obj.f_3 = Convert::ToInt32(inner->Value);
+					}
+
+					if ((inner->Name == "figura4") && (inner->NodeType == XmlNodeType::Element)) {
+						inner->Read();
+						obj.f_4 = Convert::ToInt32(inner->Value);
+					}
+
+					if ((inner->Name == "figura5") && (inner->NodeType == XmlNodeType::Element)) {
+						inner->Read();
+						obj.f_5 = Convert::ToInt32(inner->Value);
+					}
+
+					if ((inner->Name == "figura6") && (inner->NodeType == XmlNodeType::Element)) {
+						inner->Read();
+						obj.f_6 = Convert::ToInt32(inner->Value);
+					}
+
+					if ((inner->Name == "figura7") && (inner->NodeType == XmlNodeType::Element)) {
+						inner->Read();
+						obj.f_7 = Convert::ToInt32(inner->Value);
+					}
+
+					if ((inner->Name == "sizefield") && (inner->NodeType == XmlNodeType::Element)) {
+						inner->Read();
+						obj.size_field = Convert::ToInt32(inner->Value);
+					}
+
+					if ((inner->Name == "field") && (inner->NodeType == XmlNodeType::Element)) {
+						inner->Read();
+						field = inner->Value;
+					}
+				}
+			}
+		} while (reader.ReadToNextSibling("data"));
+	}
+
+
 
 	MyForm6^ Level1 = gcnew MyForm6(level_name, img_back, field_size);
 	Level1->Show();
 }
 private: System::Void MyForm2_Load(System::Object^ sender, System::EventArgs^ e) {
-	//String^ level1;
-
-
-
-	//ЯРИК ДЕЛАЕТ ХМЛ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	
 }
 };
 }
