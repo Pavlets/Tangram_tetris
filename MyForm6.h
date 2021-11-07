@@ -42,6 +42,11 @@ namespace TangramTetris {
 
 
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button3;
 	public:
 		int field_size;
 	protected:
@@ -72,9 +77,15 @@ namespace TangramTetris {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm6::typeid));
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -124,37 +135,111 @@ namespace TangramTetris {
 			// 
 			this->groupBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->groupBox1->Controls->Add(this->button4);
+			this->groupBox1->Controls->Add(this->button3);
+			this->groupBox1->Controls->Add(this->label2);
+			this->groupBox1->Controls->Add(this->label1);
+			this->groupBox1->Controls->Add(this->button2);
 			this->groupBox1->Controls->Add(this->button1);
-			this->groupBox1->Location = System::Drawing::Point(492, 248);
+			this->groupBox1->Location = System::Drawing::Point(484, 103);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(538, 177);
+			this->groupBox1->Size = System::Drawing::Size(564, 330);
 			this->groupBox1->TabIndex = 2;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Фiгури";
 			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Medium", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->label2->Location = System::Drawing::Point(159, 116);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(37, 25);
+			this->label2->TabIndex = 6;
+			this->label2->Text = L"X1";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Medium", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->label1->Location = System::Drawing::Point(49, 116);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(37, 25);
+			this->label1->TabIndex = 5;
+			this->label1->Text = L"X1";
+			// 
+			// button2
+			// 
+			this->button2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.BackgroundImage")));
+			this->button2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button2->Cursor = System::Windows::Forms::Cursors::NoMove2D;
+			this->button2->FlatAppearance->BorderSize = 0;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->ForeColor = System::Drawing::Color::Black;
+			this->button2->Location = System::Drawing::Point(106, 91);
+			this->button2->Margin = System::Windows::Forms::Padding(0);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(50, 50);
+			this->button2->TabIndex = 4;
+			this->button2->UseVisualStyleBackColor = false;
+			// 
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::Red;
+			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
+			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->button1->Cursor = System::Windows::Forms::Cursors::NoMove2D;
 			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::Red;
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Red;
 			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->button1->Location = System::Drawing::Point(22, 47);
+			this->button1->ForeColor = System::Drawing::Color::Black;
+			this->button1->Location = System::Drawing::Point(21, 41);
 			this->button1->Margin = System::Windows::Forms::Padding(0);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(25, 100);
 			this->button1->TabIndex = 3;
 			this->button1->UseVisualStyleBackColor = false;
 			// 
+			// button3
+			// 
+			this->button3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.BackgroundImage")));
+			this->button3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button3->Cursor = System::Windows::Forms::Cursors::NoMove2D;
+			this->button3->FlatAppearance->BorderSize = 0;
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button3->ForeColor = System::Drawing::Color::Black;
+			this->button3->Location = System::Drawing::Point(217, 66);
+			this->button3->Margin = System::Windows::Forms::Padding(0);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(25, 75);
+			this->button3->TabIndex = 7;
+			this->button3->UseVisualStyleBackColor = false;
+			// 
+			// button4
+			// 
+			this->button4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.BackgroundImage")));
+			this->button4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button4->Cursor = System::Windows::Forms::Cursors::NoMove2D;
+			this->button4->FlatAppearance->BorderSize = 0;
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button4->ForeColor = System::Drawing::Color::Black;
+			this->button4->Location = System::Drawing::Point(242, 116);
+			this->button4->Margin = System::Windows::Forms::Padding(0);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(25, 25);
+			this->button4->TabIndex = 8;
+			this->button4->UseVisualStyleBackColor = false;
+			// 
 			// MyForm6
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1060, 461);
+			this->ClientSize = System::Drawing::Size(1098, 461);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
@@ -163,6 +248,7 @@ namespace TangramTetris {
 			this->Text = L"Level 1";
 			this->Load += gcnew System::EventHandler(this, &MyForm6::MyForm6_Load);
 			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}

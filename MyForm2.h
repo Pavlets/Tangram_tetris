@@ -96,7 +96,7 @@ namespace TangramTetris {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label1->Location = System::Drawing::Point(28, 15);
+			this->label1->Location = System::Drawing::Point(33, 32);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(210, 58);
@@ -142,7 +142,7 @@ namespace TangramTetris {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label5->Location = System::Drawing::Point(33, 251);
+			this->label5->Location = System::Drawing::Point(28, 268);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(218, 29);
@@ -152,7 +152,7 @@ namespace TangramTetris {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(273, 15);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(100, 75);
 			this->button1->TabIndex = 5;
@@ -163,7 +163,7 @@ namespace TangramTetris {
 			// button2
 			// 
 			this->button2->Location = System::Drawing::Point(405, 15);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(100, 75);
 			this->button2->TabIndex = 6;
@@ -173,7 +173,7 @@ namespace TangramTetris {
 			// button3
 			// 
 			this->button3->Location = System::Drawing::Point(531, 15);
-			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(100, 75);
 			this->button3->TabIndex = 7;
@@ -183,7 +183,7 @@ namespace TangramTetris {
 			// button4
 			// 
 			this->button4->Location = System::Drawing::Point(655, 15);
-			this->button4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(100, 75);
 			this->button4->TabIndex = 8;
@@ -193,7 +193,7 @@ namespace TangramTetris {
 			// button5
 			// 
 			this->button5->Location = System::Drawing::Point(779, 15);
-			this->button5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button5->Margin = System::Windows::Forms::Padding(4);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(100, 75);
 			this->button5->TabIndex = 9;
@@ -203,7 +203,7 @@ namespace TangramTetris {
 			// button6
 			// 
 			this->button6->Location = System::Drawing::Point(779, 130);
-			this->button6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button6->Margin = System::Windows::Forms::Padding(4);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(100, 75);
 			this->button6->TabIndex = 14;
@@ -213,7 +213,7 @@ namespace TangramTetris {
 			// button7
 			// 
 			this->button7->Location = System::Drawing::Point(655, 130);
-			this->button7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button7->Margin = System::Windows::Forms::Padding(4);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(100, 75);
 			this->button7->TabIndex = 13;
@@ -223,7 +223,7 @@ namespace TangramTetris {
 			// button8
 			// 
 			this->button8->Location = System::Drawing::Point(531, 130);
-			this->button8->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button8->Margin = System::Windows::Forms::Padding(4);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(100, 75);
 			this->button8->TabIndex = 12;
@@ -233,7 +233,7 @@ namespace TangramTetris {
 			// button9
 			// 
 			this->button9->Location = System::Drawing::Point(405, 130);
-			this->button9->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button9->Margin = System::Windows::Forms::Padding(4);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(100, 75);
 			this->button9->TabIndex = 11;
@@ -243,7 +243,7 @@ namespace TangramTetris {
 			// button10
 			// 
 			this->button10->Location = System::Drawing::Point(273, 130);
-			this->button10->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button10->Margin = System::Windows::Forms::Padding(4);
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(100, 75);
 			this->button10->TabIndex = 10;
@@ -255,7 +255,7 @@ namespace TangramTetris {
 			this->button11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button11->Location = System::Drawing::Point(495, 251);
-			this->button11->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button11->Margin = System::Windows::Forms::Padding(4);
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(136, 74);
 			this->button11->TabIndex = 15;
@@ -276,7 +276,7 @@ namespace TangramTetris {
 			// button12
 			// 
 			this->button12->Location = System::Drawing::Point(177, 373);
-			this->button12->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button12->Margin = System::Windows::Forms::Padding(4);
 			this->button12->Name = L"button12";
 			this->button12->Size = System::Drawing::Size(157, 27);
 			this->button12->TabIndex = 17;
@@ -287,7 +287,7 @@ namespace TangramTetris {
 			// button13
 			// 
 			this->button13->Location = System::Drawing::Point(597, 373);
-			this->button13->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button13->Margin = System::Windows::Forms::Padding(4);
 			this->button13->Name = L"button13";
 			this->button13->Size = System::Drawing::Size(157, 27);
 			this->button13->TabIndex = 18;
@@ -320,7 +320,7 @@ namespace TangramTetris {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MyForm2";
 			this->Text = L"Tangram Tetris";
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &MyForm2::MyForm2_FormClosed);
