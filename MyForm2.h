@@ -344,12 +344,13 @@ private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ 
 	Records->Show();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ level_name = "Light Level 1";
+	
 	Image^ img_back = Image::FromFile("B1.jpg");
 
 	level = "1";
 	GetData obj;
 	String^ field;
+	String^ level_name;
 
 	XmlTextReader reader("xmlfile.xml");
 	reader.ReadToFollowing("alldata");
@@ -406,6 +407,11 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 					if ((inner->Name == "field") && (inner->NodeType == XmlNodeType::Element)) {
 						inner->Read();
 						field = inner->Value;
+					}
+					
+					if ((inner->Name == "namelevel") && (inner->NodeType == XmlNodeType::Element)) {
+						inner->Read();
+						level_name = inner->Value;
 					}
 				}
 			}
