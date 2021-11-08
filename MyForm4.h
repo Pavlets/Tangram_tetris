@@ -84,7 +84,7 @@ namespace TangramTetris {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label2->Location = System::Drawing::Point(27, 35);
+			this->label2->Location = System::Drawing::Point(27, 50);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(575, 130);
 			this->label2->TabIndex = 1;
@@ -93,7 +93,7 @@ namespace TangramTetris {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(369, 168);
+			this->pictureBox1->Location = System::Drawing::Point(367, 192);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(306, 166);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -103,7 +103,7 @@ namespace TangramTetris {
 			// pictureBox2
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(32, 168);
+			this->pictureBox2->Location = System::Drawing::Point(32, 192);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(309, 166);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -113,7 +113,7 @@ namespace TangramTetris {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(12, 337);
+			this->label3->Location = System::Drawing::Point(12, 361);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(685, 13);
 			this->label3->TabIndex = 4;
@@ -125,18 +125,19 @@ namespace TangramTetris {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label4->Location = System::Drawing::Point(27, 360);
+			this->label4->Location = System::Drawing::Point(27, 383);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(181, 26);
 			this->label4->TabIndex = 5;
 			this->label4->Text = L"Гра розроблена:";
+			this->label4->Click += gcnew System::EventHandler(this, &MyForm4::label4_Click);
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label5->Location = System::Drawing::Point(28, 396);
+			this->label5->Location = System::Drawing::Point(28, 423);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(621, 80);
 			this->label5->TabIndex = 6;
@@ -148,7 +149,7 @@ namespace TangramTetris {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(708, 481);
+			this->ClientSize = System::Drawing::Size(708, 512);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
@@ -166,5 +167,7 @@ namespace TangramTetris {
 
 		}
 #pragma endregion
-	};
+	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
