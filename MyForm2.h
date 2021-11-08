@@ -344,7 +344,6 @@ private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ 
 	Records->Show();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	
 	Image^ img_back = Image::FromFile("B1.jpg");
 
 	level = "1";
