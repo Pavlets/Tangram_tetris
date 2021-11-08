@@ -73,7 +73,7 @@ namespace TangramTetris {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label1->Location = System::Drawing::Point(27, 23);
+			this->label1->Location = System::Drawing::Point(27, 9);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(105, 26);
 			this->label1->TabIndex = 0;
@@ -84,20 +84,18 @@ namespace TangramTetris {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label2->Location = System::Drawing::Point(27, 62);
+			this->label2->Location = System::Drawing::Point(27, 35);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(575, 104);
+			this->label2->Size = System::Drawing::Size(575, 130);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"Tangram Tetris - Це гра у жанрі головоломка, суть якої, \r\nвмістити фігури на полі"
-				L",як показано на малюнку.\r\nКористувач може переміщувати, та обератати фігури\r\nзар"
-				L"ади досягнення бажаного результату.\r\n";
+			this->label2->Text = resources->GetString(L"label2.Text");
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(369, 187);
+			this->pictureBox1->Location = System::Drawing::Point(369, 168);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(294, 147);
+			this->pictureBox1->Size = System::Drawing::Size(306, 166);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 2;
 			this->pictureBox1->TabStop = false;
@@ -105,9 +103,9 @@ namespace TangramTetris {
 			// pictureBox2
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(32, 187);
+			this->pictureBox2->Location = System::Drawing::Point(32, 168);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(301, 147);
+			this->pictureBox2->Size = System::Drawing::Size(309, 166);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox2->TabIndex = 3;
 			this->pictureBox2->TabStop = false;
