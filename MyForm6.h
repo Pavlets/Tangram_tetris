@@ -28,7 +28,8 @@ namespace TangramTetris {
 	public:
 
 	public:
-		bool ButtonF1Click = false;
+		String^ ButtonFClick = "";
+		bool FTurn = false;
 		MyForm6(String^ level_name, Image^ img_back, int field_size, String^ field, int F_1,  int F_2, int F_3, int F_4, int F_5, int F_6, int F_7)
 		{
 			InitializeComponent();
@@ -169,6 +170,7 @@ namespace TangramTetris {
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10)));
 			this->tableLayoutPanel1->Size = System::Drawing::Size(437, 437);
 			this->tableLayoutPanel1->TabIndex = 1;
+			this->tableLayoutPanel1->MouseDoubleClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm6::tableLayoutPanel1_MouseDoubleClick);
 			this->tableLayoutPanel1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm6::tableLayoutPanel1_MouseMove);
 			// 
 			// groupBox1
@@ -282,6 +284,7 @@ namespace TangramTetris {
 			this->ButtonF6_1->Size = System::Drawing::Size(25, 50);
 			this->ButtonF6_1->TabIndex = 16;
 			this->ButtonF6_1->UseVisualStyleBackColor = false;
+			this->ButtonF6_1->Click += gcnew System::EventHandler(this, &MyForm6::ButtonF6_1_Click);
 			// 
 			// ButtonF6_2
 			// 
@@ -297,6 +300,7 @@ namespace TangramTetris {
 			this->ButtonF6_2->Size = System::Drawing::Size(25, 50);
 			this->ButtonF6_2->TabIndex = 15;
 			this->ButtonF6_2->UseVisualStyleBackColor = false;
+			this->ButtonF6_2->Click += gcnew System::EventHandler(this, &MyForm6::ButtonF6_2_Click);
 			// 
 			// F1_count
 			// 
@@ -323,6 +327,7 @@ namespace TangramTetris {
 			this->ButtonF5_1->Size = System::Drawing::Size(25, 50);
 			this->ButtonF5_1->TabIndex = 14;
 			this->ButtonF5_1->UseVisualStyleBackColor = false;
+			this->ButtonF5_1->Click += gcnew System::EventHandler(this, &MyForm6::ButtonF5_1_Click);
 			// 
 			// ButtonF5_2
 			// 
@@ -338,6 +343,7 @@ namespace TangramTetris {
 			this->ButtonF5_2->Size = System::Drawing::Size(25, 50);
 			this->ButtonF5_2->TabIndex = 13;
 			this->ButtonF5_2->UseVisualStyleBackColor = false;
+			this->ButtonF5_2->Click += gcnew System::EventHandler(this, &MyForm6::ButtonF5_2_Click);
 			// 
 			// ButtonF7_2
 			// 
@@ -353,6 +359,7 @@ namespace TangramTetris {
 			this->ButtonF7_2->Size = System::Drawing::Size(25, 25);
 			this->ButtonF7_2->TabIndex = 12;
 			this->ButtonF7_2->UseVisualStyleBackColor = false;
+			this->ButtonF7_2->Click += gcnew System::EventHandler(this, &MyForm6::ButtonF7_2_Click);
 			// 
 			// ButtonF7_1
 			// 
@@ -368,6 +375,7 @@ namespace TangramTetris {
 			this->ButtonF7_1->Size = System::Drawing::Size(75, 25);
 			this->ButtonF7_1->TabIndex = 11;
 			this->ButtonF7_1->UseVisualStyleBackColor = false;
+			this->ButtonF7_1->Click += gcnew System::EventHandler(this, &MyForm6::ButtonF7_1_Click);
 			// 
 			// ButtonF4_1
 			// 
@@ -383,6 +391,7 @@ namespace TangramTetris {
 			this->ButtonF4_1->Size = System::Drawing::Size(25, 25);
 			this->ButtonF4_1->TabIndex = 10;
 			this->ButtonF4_1->UseVisualStyleBackColor = false;
+			this->ButtonF4_1->Click += gcnew System::EventHandler(this, &MyForm6::ButtonF4_1_Click);
 			// 
 			// ButtonF4_2
 			// 
@@ -398,6 +407,7 @@ namespace TangramTetris {
 			this->ButtonF4_2->Size = System::Drawing::Size(25, 75);
 			this->ButtonF4_2->TabIndex = 9;
 			this->ButtonF4_2->UseVisualStyleBackColor = false;
+			this->ButtonF4_2->Click += gcnew System::EventHandler(this, &MyForm6::ButtonF4_2_Click);
 			// 
 			// ButtonF3_2
 			// 
@@ -413,6 +423,7 @@ namespace TangramTetris {
 			this->ButtonF3_2->Size = System::Drawing::Size(25, 25);
 			this->ButtonF3_2->TabIndex = 8;
 			this->ButtonF3_2->UseVisualStyleBackColor = false;
+			this->ButtonF3_2->Click += gcnew System::EventHandler(this, &MyForm6::ButtonF3_2_Click);
 			// 
 			// ButtonF3_1
 			// 
@@ -428,6 +439,7 @@ namespace TangramTetris {
 			this->ButtonF3_1->Size = System::Drawing::Size(25, 75);
 			this->ButtonF3_1->TabIndex = 7;
 			this->ButtonF3_1->UseVisualStyleBackColor = false;
+			this->ButtonF3_1->Click += gcnew System::EventHandler(this, &MyForm6::ButtonF3_1_Click);
 			// 
 			// ButtonF2
 			// 
@@ -443,6 +455,7 @@ namespace TangramTetris {
 			this->ButtonF2->Size = System::Drawing::Size(50, 50);
 			this->ButtonF2->TabIndex = 4;
 			this->ButtonF2->UseVisualStyleBackColor = false;
+			this->ButtonF2->Click += gcnew System::EventHandler(this, &MyForm6::ButtonF2_Click);
 			// 
 			// ButtonF1
 			// 
@@ -508,19 +521,67 @@ namespace TangramTetris {
 			}*/
 	}
 	private: System::Void ButtonF1_Click(System::Object^ sender, System::EventArgs^ e) {
-		ButtonF1Click = true;
+		ButtonFClick = "F1";
 	}
 	private: System::Void tableLayoutPanel1_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-		int CursorX = e->X;
-		int CursorY = e->Y;
-		F1_count->Text = CursorX.ToString() + "   " + CursorY.ToString();
-
 
 		for (int i = 0; i < field_size; i++) 
 			for (int j = 0; j < field_size; j++) {
 				if ((e->X > (327 / field_size) * i && e->X < (327 / field_size) * (i + 1)) && (e->Y > (354 / field_size) * j && e->Y < (354 / field_size) * (j + 1)))
-					tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::Blue;
+					if (ButtonFClick == "F1" && FTurn)
+						for(int ii=0;ii<field_size;ii++)
+							for(int jj=0;jj<field_size;jj++)
+								if(jj==j)
+									tableLayoutPanel1->GetControlFromPosition(ii, jj)->BackColor = Color::Aqua;
+								else
+									tableLayoutPanel1->GetControlFromPosition(ii, jj)->BackColor = Color::White;
+					else if(ButtonFClick == "F1" && !FTurn)
+						for (int ii = 0; ii < field_size; ii++)
+							for (int jj = 0; jj < field_size; jj++)
+								if (ii == i)
+									tableLayoutPanel1->GetControlFromPosition(ii, jj)->BackColor = Color::Aqua;
+								else
+									tableLayoutPanel1->GetControlFromPosition(ii, jj)->BackColor = Color::White;
 			}
+	}
+	private: System::Void ButtonF2_Click(System::Object^ sender, System::EventArgs^ e) {
+		ButtonFClick = "F2";
+	}
+	private: System::Void ButtonF3_1_Click(System::Object^ sender, System::EventArgs^ e) {
+		ButtonFClick = "F3";
+	}
+	private: System::Void ButtonF3_2_Click(System::Object^ sender, System::EventArgs^ e) {
+		ButtonFClick = "F3";
+	}
+	private: System::Void ButtonF4_1_Click(System::Object^ sender, System::EventArgs^ e) {
+		ButtonFClick = "F4";
+	}
+	private: System::Void ButtonF4_2_Click(System::Object^ sender, System::EventArgs^ e) {
+		ButtonFClick = "F4";
+	}
+	private: System::Void ButtonF5_1_Click(System::Object^ sender, System::EventArgs^ e) {
+		ButtonFClick = "F5";
+	}
+	private: System::Void ButtonF5_2_Click(System::Object^ sender, System::EventArgs^ e) {
+		ButtonFClick = "F5";
+	}
+	private: System::Void ButtonF6_1_Click(System::Object^ sender, System::EventArgs^ e) {
+		ButtonFClick = "F6";
+	}
+	private: System::Void ButtonF6_2_Click(System::Object^ sender, System::EventArgs^ e) {
+		ButtonFClick = "F6";
+	}
+	private: System::Void ButtonF7_1_Click(System::Object^ sender, System::EventArgs^ e) {
+		ButtonFClick = "F7";
+	}
+	private: System::Void ButtonF7_2_Click(System::Object^ sender, System::EventArgs^ e) {
+		ButtonFClick = "F7";
+	}
+	private: System::Void tableLayoutPanel1_MouseDoubleClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		if (!FTurn)
+			FTurn = true;
+		else
+			FTurn = false;
 	}
 };
 }
