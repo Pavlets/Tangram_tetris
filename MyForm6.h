@@ -278,7 +278,7 @@ namespace TangramTetris {
 			this->ButtonF6_1->FlatAppearance->BorderSize = 0;
 			this->ButtonF6_1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonF6_1->ForeColor = System::Drawing::Color::Black;
-			this->ButtonF6_1->Location = System::Drawing::Point(178, 212);
+			this->ButtonF6_1->Location = System::Drawing::Point(178, 206);
 			this->ButtonF6_1->Margin = System::Windows::Forms::Padding(0);
 			this->ButtonF6_1->Name = L"ButtonF6_1";
 			this->ButtonF6_1->Size = System::Drawing::Size(25, 50);
@@ -337,7 +337,7 @@ namespace TangramTetris {
 			this->ButtonF5_2->FlatAppearance->BorderSize = 0;
 			this->ButtonF5_2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonF5_2->ForeColor = System::Drawing::Color::Black;
-			this->ButtonF5_2->Location = System::Drawing::Point(48, 212);
+			this->ButtonF5_2->Location = System::Drawing::Point(48, 206);
 			this->ButtonF5_2->Margin = System::Windows::Forms::Padding(0);
 			this->ButtonF5_2->Name = L"ButtonF5_2";
 			this->ButtonF5_2->Size = System::Drawing::Size(25, 50);
@@ -353,7 +353,7 @@ namespace TangramTetris {
 			this->ButtonF7_2->FlatAppearance->BorderSize = 0;
 			this->ButtonF7_2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonF7_2->ForeColor = System::Drawing::Color::Black;
-			this->ButtonF7_2->Location = System::Drawing::Point(338, 213);
+			this->ButtonF7_2->Location = System::Drawing::Point(337, 207);
 			this->ButtonF7_2->Margin = System::Windows::Forms::Padding(0);
 			this->ButtonF7_2->Name = L"ButtonF7_2";
 			this->ButtonF7_2->Size = System::Drawing::Size(25, 25);
@@ -369,7 +369,7 @@ namespace TangramTetris {
 			this->ButtonF7_1->FlatAppearance->BorderSize = 0;
 			this->ButtonF7_1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonF7_1->ForeColor = System::Drawing::Color::Black;
-			this->ButtonF7_1->Location = System::Drawing::Point(313, 237);
+			this->ButtonF7_1->Location = System::Drawing::Point(313, 231);
 			this->ButtonF7_1->Margin = System::Windows::Forms::Padding(0);
 			this->ButtonF7_1->Name = L"ButtonF7_1";
 			this->ButtonF7_1->Size = System::Drawing::Size(75, 25);
@@ -385,7 +385,7 @@ namespace TangramTetris {
 			this->ButtonF4_1->FlatAppearance->BorderSize = 0;
 			this->ButtonF4_1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonF4_1->ForeColor = System::Drawing::Color::Black;
-			this->ButtonF4_1->Location = System::Drawing::Point(338, 117);
+			this->ButtonF4_1->Location = System::Drawing::Point(337, 117);
 			this->ButtonF4_1->Margin = System::Windows::Forms::Padding(0);
 			this->ButtonF4_1->Name = L"ButtonF4_1";
 			this->ButtonF4_1->Size = System::Drawing::Size(25, 25);
