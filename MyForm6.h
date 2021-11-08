@@ -499,6 +499,13 @@ namespace TangramTetris {
 	private: System::Void MyForm6_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->Text = level_name;
 		BackgroundImage = img_back;
+		F1_count->Text = "X" + F_1;
+		F2_count->Text = "X" + F_2;
+		F3_count->Text = "X" + F_3;
+		F4_count->Text = "X" + F_4;
+		F5_count->Text = "X" + F_5;
+		F6_count->Text = "X" + F_6;
+		F7_count->Text = "X" + F_7;
 
 		tableLayoutPanel1->ColumnCount = field_size;
 		tableLayoutPanel1->RowCount = field_size;
