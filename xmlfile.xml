@@ -122,14 +122,14 @@
 	</data>
 	<data number="11">
 		<figura1> 0 </figura1>
-		<figura2> 0 </figura2>
-		<figura3> 0 </figura3>
-		<figura4> 0 </figura4>
-		<figura5> 0 </figura5>
+		<figura2> 2 </figura2>
+		<figura3> 3 </figura3>
+		<figura4> 4 </figura4>
+		<figura5> 5 </figura5>
 		<figura6> 0 </figura6>
-		<figura7> 0 </figura7>
-		<sizefield> 0 </sizefield>
-		<field> 0 </field>
+		<figura7> 3 </figura7>
+		<sizefield> 11 </sizefield>
+		<field> 2200000002220011001002001111011000111111111001111111110000111001100001010011001111111100001111100002010101000220000000022 </field>
 		<namelevel> Final Level </namelevel>
 	</data>
 </alldata>
