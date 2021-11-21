@@ -1,123 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <alldata>
 	<data number="1">
-		<figura1> 1 </figura1>
-		<figura2> 1 </figura2>
-		<figura3> 1 </figura3>
-		<figura4> 1 </figura4>
-		<figura5> 0 </figura5>
-		<figura6> 0 </figura6>
-		<figura7> 0 </figura7>
-		<sizefield> 4 </sizefield>
-		<field> 1111111111111111 </field>
-		<namelevel> Light Level 1 </namelevel>
-	</data>
-	<data number="2">
 		<figura1> 0 </figura1>
 		<figura2> 0 </figura2>
 		<figura3> 0 </figura3>
-		<figura4> 0 </figura4>
+		<figura4> 2 </figura4>
 		<figura5> 0 </figura5>
-		<figura6> 0 </figura6>
+		<figura6> 1 </figura6>
 		<figura7> 0 </figura7>
-		<sizefield> 0 </sizefield>
-		<field> 0 </field>
+		<sizefield> 4 </sizefield>
+		<field> 1111111111110000 </field>
+		<namelevel> Light Level 1 </namelevel>
+	</data>
+	<data number="2">
+		<figura1> 1 </figura1>
+		<figura2> 0 </figura2>
+		<figura3> 1 </figura3>
+		<figura4> 1 </figura4>
+		<figura5> 0 </figura5>
+		<figura6> 1 </figura6>
+		<figura7> 0 </figura7>
+		<sizefield> 4 </sizefield>
+		<field> 1111111111111111 </field>
 		<namelevel> Light Level 2 </namelevel>
 	</data>
 	<data number="3">
 		<figura1> 0 </figura1>
 		<figura2> 0 </figura2>
-		<figura3> 0 </figura3>
+		<figura3> 1 </figura3>
 		<figura4> 0 </figura4>
 		<figura5> 0 </figura5>
 		<figura6> 0 </figura6>
-		<figura7> 0 </figura7>
-		<sizefield> 0 </sizefield>
-		<field> 0 </field>
+		<figura7> 2 </figura7>
+		<sizefield> 4 </sizefield>
+		<field> 1111111111110000 </field>
 		<namelevel> Light Level 3 </namelevel>
 	</data>
 	<data number="4">
 		<figura1> 0 </figura1>
 		<figura2> 0 </figura2>
-		<figura3> 0 </figura3>
+		<figura3> 1 </figura3>
 		<figura4> 0 </figura4>
 		<figura5> 0 </figura5>
-		<figura6> 0 </figura6>
-		<figura7> 0 </figura7>
-		<sizefield> 0 </sizefield>
-		<field> 0 </field>
+		<figura6> 1 </figura6>
+		<figura7> 2 </figura7>
+		<sizefield> 4 </sizefield>
+		<field> 1111111111111111 </field>
 		<namelevel> Light Level 4 </namelevel>
 	</data>
 	<data number="5">
 		<figura1> 0 </figura1>
 		<figura2> 0 </figura2>
-		<figura3> 0 </figura3>
+		<figura3> 2 </figura3>
 		<figura4> 0 </figura4>
 		<figura5> 0 </figura5>
-		<figura6> 0 </figura6>
+		<figura6> 2 </figura6>
 		<figura7> 0 </figura7>
-		<sizefield> 0 </sizefield>
-		<field> 0 </field>
+		<sizefield> 4 </sizefield>
+		<field> 1111111111111111 </field>
 		<namelevel> Light Level 5 </namelevel>
 	</data>
 	<data number="6">
 		<figura1> 0 </figura1>
 		<figura2> 0 </figura2>
-		<figura3> 0 </figura3>
+		<figura3> 3 </figura3>
 		<figura4> 0 </figura4>
-		<figura5> 0 </figura5>
+		<figura5> 3 </figura5>
 		<figura6> 0 </figura6>
 		<figura7> 0 </figura7>
-		<sizefield> 0 </sizefield>
-		<field> 0 </field>
+		<sizefield> 6 </sizefield>
+		<field> 000111000111000011110011111111111111 </field>
 		<namelevel> Average Level 1 </namelevel>
 	</data>
 	<data number="7">
-		<figura1> 0 </figura1>
+		<figura1> 1 </figura1>
 		<figura2> 0 </figura2>
-		<figura3> 0 </figura3>
-		<figura4> 0 </figura4>
-		<figura5> 0 </figura5>
-		<figura6> 0 </figura6>
+		<figura3> 3 </figura3>
+		<figura4> 1 </figura4>
+		<figura5> 1 </figura5>
+		<figura6> 2 </figura6>
 		<figura7> 0 </figura7>
-		<sizefield> 0 </sizefield>
-		<field> 0 </field>
+		<sizefield> 7 </sizefield>
+		<field> 0000000000000000000001110011111100111111001111111111 </field>
 		<namelevel> Average Level 2 </namelevel>
 	</data>
 	<data number="8">
 		<figura1> 0 </figura1>
 		<figura2> 0 </figura2>
-		<figura3> 0 </figura3>
-		<figura4> 0 </figura4>
+		<figura3> 2 </figura3>
+		<figura4> 1 </figura4>
 		<figura5> 0 </figura5>
-		<figura6> 0 </figura6>
-		<figura7> 0 </figura7>
-		<sizefield> 0 </sizefield>
-		<field> 0 </field>
+		<figura6> 2 </figura6>
+		<figura7> 1 </figura7>
+		<sizefield> 6 </sizefield>
+		<field> 111111111111111111111110010000000000 </field>
 		<namelevel> Average Level 3 </namelevel>
 	</data>
 	<data number="9">
 		<figura1> 0 </figura1>
-		<figura2> 0 </figura2>
+		<figura2> 1 </figura2>
 		<figura3> 0 </figura3>
 		<figura4> 0 </figura4>
 		<figura5> 0 </figura5>
-		<figura6> 0 </figura6>
-		<figura7> 0 </figura7>
-		<sizefield> 0 </sizefield>
-		<field> 0 </field>
+		<figura6> 2 </figura6>
+		<figura7> 2 </figura7>
+		<sizefield> 6 </sizefield>
+		<field> 001100011100011100111110111110100100 </field>
 		<namelevel> Average Level 4 </namelevel>
 	</data>
 	<data number="10">
 		<figura1> 0 </figura1>
 		<figura2> 0 </figura2>
-		<figura3> 0 </figura3>
+		<figura3> 1 </figura3>
 		<figura4> 0 </figura4>
-		<figura5> 0 </figura5>
-		<figura6> 0 </figura6>
-		<figura7> 0 </figura7>
-		<sizefield> 0 </sizefield>
-		<field> 0 </field>
+		<figura5> 2 </figura5>
+		<figura6> 1 </figura6>
+		<figura7> 2 </figura7>
+		<sizefield> 7 </sizefield>
+		<field> 0000000000000001110001111100011110001111101111111 </field>
 		<namelevel> Average Level 5 </namelevel>
 	</data>
 	<data number="11">
