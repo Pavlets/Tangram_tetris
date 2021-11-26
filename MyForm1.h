@@ -77,7 +77,7 @@ namespace TangramTetris {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->label1->Location = System::Drawing::Point(125, 36);
+			this->label1->Location = System::Drawing::Point(125, 32);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(86, 31);
 			this->label1->TabIndex = 0;
@@ -87,12 +87,14 @@ namespace TangramTetris {
 			// 
 			this->button1->BackColor = System::Drawing::Color::Transparent;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button1->Location = System::Drawing::Point(123, 100);
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button1->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->button1->Location = System::Drawing::Point(123, 155);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(88, 36);
 			this->button1->TabIndex = 1;
-			this->button1->Text = L"Старт";
+			this->button1->Text = L"Почати";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm1::button1_Click);
 			// 
@@ -100,8 +102,10 @@ namespace TangramTetris {
 			// 
 			this->button3->BackColor = System::Drawing::Color::Transparent;
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button3->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->button3->Location = System::Drawing::Point(123, 165);
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->button3->Location = System::Drawing::Point(12, 284);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(88, 40);
 			this->button3->TabIndex = 3;
@@ -113,8 +117,10 @@ namespace TangramTetris {
 			// 
 			this->button4->BackColor = System::Drawing::Color::Transparent;
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
 			this->button4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button4->Location = System::Drawing::Point(123, 235);
+			this->button4->Location = System::Drawing::Point(237, 282);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(88, 42);
 			this->button4->TabIndex = 4;
@@ -186,6 +192,7 @@ private: System::Void MyForm1_Shown(System::Object^ sender, System::EventArgs^ e
 	}
 }
 private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->CenterToScreen();
 	label1->Parent = pictureBox1;
 	button1->Parent = pictureBox1;
 	button3->Parent = pictureBox1;

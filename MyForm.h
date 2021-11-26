@@ -19,6 +19,7 @@ namespace TangramTetris {
 		MyForm(void)
 		{
 			InitializeComponent();
+			this->CenterToScreen();
 			//
 			//TODO: добавьте код конструктора
 			//

@@ -33,6 +33,7 @@ namespace TangramTetris {
 		MyForm6(String^ level_name, Image^ img_back, int field_size, String^ field, int F_1,  int F_2, int F_3, int F_4, int F_5, int F_6, int F_7)
 		{
 			InitializeComponent();
+			this->CenterToScreen();
 			//Обрабатываем данные
 			//Или записываем их в поле
 			this->level_name = level_name;
