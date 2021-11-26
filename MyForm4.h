@@ -73,10 +73,9 @@ namespace TangramTetris {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label1->Location = System::Drawing::Point(36, 11);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Location = System::Drawing::Point(27, 9);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(130, 31);
+			this->label1->Size = System::Drawing::Size(105, 26);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"ßê ãðàòè:";
 			// 
@@ -85,20 +84,18 @@ namespace TangramTetris {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label2->Location = System::Drawing::Point(36, 62);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Location = System::Drawing::Point(27, 50);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(711, 155);
+			this->label2->Size = System::Drawing::Size(575, 130);
 			this->label2->TabIndex = 1;
 			this->label2->Text = resources->GetString(L"label2.Text");
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(489, 236);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
+			this->pictureBox1->Location = System::Drawing::Point(367, 192);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(408, 204);
+			this->pictureBox1->Size = System::Drawing::Size(306, 166);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 2;
 			this->pictureBox1->TabStop = false;
@@ -106,10 +103,9 @@ namespace TangramTetris {
 			// pictureBox2
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(43, 236);
-			this->pictureBox2->Margin = System::Windows::Forms::Padding(4);
+			this->pictureBox2->Location = System::Drawing::Point(32, 192);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(412, 204);
+			this->pictureBox2->Size = System::Drawing::Size(309, 166);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox2->TabIndex = 3;
 			this->pictureBox2->TabStop = false;
@@ -117,10 +113,9 @@ namespace TangramTetris {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(16, 444);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Location = System::Drawing::Point(12, 361);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(912, 17);
+			this->label3->Size = System::Drawing::Size(685, 13);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"_________________________________________________________________________________"
 				L"________________________________";
@@ -130,10 +125,9 @@ namespace TangramTetris {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label4->Location = System::Drawing::Point(36, 471);
-			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Location = System::Drawing::Point(27, 383);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(223, 31);
+			this->label4->Size = System::Drawing::Size(181, 26);
 			this->label4->TabIndex = 5;
 			this->label4->Text = L"Ãðà ðîçðîáëåíà:";
 			this->label4->Click += gcnew System::EventHandler(this, &MyForm4::label4_Click);
@@ -143,21 +137,19 @@ namespace TangramTetris {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label5->Location = System::Drawing::Point(37, 521);
-			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label5->Location = System::Drawing::Point(28, 423);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(504, 100);
+			this->label5->Size = System::Drawing::Size(418, 80);
 			this->label5->TabIndex = 6;
 			this->label5->Text = L"ÎÁÐÎÁÊÀ ÂÈÍßÒÊÎÂÈÕ ÑÈÒÓÀÖ²É - Ðîìàí ×óéêî;\r\nÐÎÁÎÒÀ Ç ÄÀÍÈÌÈ - ßðîñëàâ Ðîãîæê³í;\r\n"
 				L"ÐÅÀË²ÇÀÖ²ß ÀËÃÎÐÈÒÌ²Â - Îëåêñ³é Ïàâëåöü;\r\nÐÎÇÐÎÁËÅÍÍß ²ÍÒÅÐÔÅÉÑÓ - Âëàñåíêî Êîñò"
 				L"ÿíòèí.\r\n";
-			this->label5->Click += gcnew System::EventHandler(this, &MyForm4::label5_Click);
 			// 
 			// MyForm4
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(944, 630);
+			this->ClientSize = System::Drawing::Size(708, 512);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
@@ -166,7 +158,7 @@ namespace TangramTetris {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
-			this->Margin = System::Windows::Forms::Padding(4);
+			this->MaximizeBox = false;
 			this->Name = L"MyForm4";
 			this->Text = L"MyForm4";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();

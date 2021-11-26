@@ -56,8 +56,9 @@ namespace TangramTetris {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(321, 276);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
 			this->Name = L"MyForm5";
-			this->Text = L"MyForm5";
+			this->Text = L"Tangram Tetris";
 			this->ResumeLayout(false);
 
 		}
