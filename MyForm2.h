@@ -37,7 +37,13 @@ namespace TangramTetris {
 		String^ Number;
 		String^ Field;
 		String^ Level_Name;
-		int Level;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::PictureBox^ pictureBox4;
+	private: System::Windows::Forms::PictureBox^ pictureBox5;
+
+		   int Level;
 
 		void ReadXML(GetData* obj1)
 		{
@@ -131,12 +137,12 @@ namespace TangramTetris {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
+
 	protected:
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ label5;
+
+
+
+
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
@@ -148,7 +154,7 @@ namespace TangramTetris {
 	private: System::Windows::Forms::Button^ button9;
 	private: System::Windows::Forms::Button^ button10;
 	private: System::Windows::Forms::Button^ button11;
-	private: System::Windows::Forms::Label^ label6;
+
 	private: System::Windows::Forms::Button^ button12;
 	private: System::Windows::Forms::Button^ button13;
 
@@ -165,11 +171,7 @@ namespace TangramTetris {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm2::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -181,228 +183,290 @@ namespace TangramTetris {
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->button11 = (gcnew System::Windows::Forms::Button());
-			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->button13 = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label1->Location = System::Drawing::Point(25, 26);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(145, 50);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Легкий рівень \r\nскладності";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(12, 76);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(685, 13);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"_________________________________________________________________________________"
-				L"________________________________";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(12, 170);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(685, 13);
-			this->label3->TabIndex = 2;
-			this->label3->Text = L"_________________________________________________________________________________"
-				L"________________________________";
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label4->Location = System::Drawing::Point(25, 106);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(163, 50);
-			this->label4->TabIndex = 3;
-			this->label4->Text = L"Середній рівень \r\nскладності";
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label5->Location = System::Drawing::Point(21, 218);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(173, 25);
-			this->label5->TabIndex = 4;
-			this->label5->Text = L"Фінальний рівень";
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(205, 12);
+			this->button1->BackColor = System::Drawing::Color::Transparent;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->ForeColor = System::Drawing::Color::Lime;
+			this->button1->Location = System::Drawing::Point(12, 29);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 61);
 			this->button1->TabIndex = 5;
 			this->button1->Text = L"Рівень 1";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm2::button1_Click);
+			this->button1->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button1_MouseEnter);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(304, 12);
+			this->button2->BackColor = System::Drawing::Color::Transparent;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->ForeColor = System::Drawing::Color::Lime;
+			this->button2->Location = System::Drawing::Point(106, 29);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 61);
 			this->button2->TabIndex = 6;
 			this->button2->Text = L"Рівень 2";
-			this->button2->UseVisualStyleBackColor = true;
+			this->button2->UseVisualStyleBackColor = false;
+			this->button2->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button2_MouseEnter);
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(398, 12);
+			this->button3->BackColor = System::Drawing::Color::Transparent;
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button3->ForeColor = System::Drawing::Color::Lime;
+			this->button3->Location = System::Drawing::Point(199, 29);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(75, 61);
 			this->button3->TabIndex = 7;
 			this->button3->Text = L"Рівень 3";
-			this->button3->UseVisualStyleBackColor = true;
+			this->button3->UseVisualStyleBackColor = false;
+			this->button3->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button3_MouseEnter);
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(491, 12);
+			this->button4->BackColor = System::Drawing::Color::Transparent;
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button4->ForeColor = System::Drawing::Color::Lime;
+			this->button4->Location = System::Drawing::Point(291, 29);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(75, 61);
 			this->button4->TabIndex = 8;
 			this->button4->Text = L"Рівень 4";
-			this->button4->UseVisualStyleBackColor = true;
+			this->button4->UseVisualStyleBackColor = false;
+			this->button4->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button4_MouseEnter);
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(584, 12);
+			this->button5->BackColor = System::Drawing::Color::Transparent;
+			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button5->ForeColor = System::Drawing::Color::Lime;
+			this->button5->Location = System::Drawing::Point(388, 29);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(75, 61);
 			this->button5->TabIndex = 9;
 			this->button5->Text = L"Рівень 5";
-			this->button5->UseVisualStyleBackColor = true;
+			this->button5->UseVisualStyleBackColor = false;
+			this->button5->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button5_MouseEnter);
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(584, 106);
+			this->button6->BackColor = System::Drawing::Color::Transparent;
+			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->button6->Location = System::Drawing::Point(529, 138);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(75, 61);
 			this->button6->TabIndex = 14;
 			this->button6->Text = L"Рівень 5";
-			this->button6->UseVisualStyleBackColor = true;
+			this->button6->UseVisualStyleBackColor = false;
+			this->button6->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button6_MouseEnter);
 			// 
 			// button7
 			// 
-			this->button7->Location = System::Drawing::Point(491, 106);
+			this->button7->BackColor = System::Drawing::Color::Transparent;
+			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->button7->Location = System::Drawing::Point(440, 138);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(75, 61);
 			this->button7->TabIndex = 13;
 			this->button7->Text = L"Рівень 4";
-			this->button7->UseVisualStyleBackColor = true;
+			this->button7->UseVisualStyleBackColor = false;
+			this->button7->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button7_MouseEnter);
 			// 
 			// button8
 			// 
-			this->button8->Location = System::Drawing::Point(398, 106);
+			this->button8->BackColor = System::Drawing::Color::Transparent;
+			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->button8->Location = System::Drawing::Point(350, 138);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(75, 61);
 			this->button8->TabIndex = 12;
 			this->button8->Text = L"Рівень 3";
-			this->button8->UseVisualStyleBackColor = true;
+			this->button8->UseVisualStyleBackColor = false;
+			this->button8->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button8_MouseEnter);
 			// 
 			// button9
 			// 
-			this->button9->Location = System::Drawing::Point(304, 106);
+			this->button9->BackColor = System::Drawing::Color::Transparent;
+			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->button9->Location = System::Drawing::Point(261, 138);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(75, 61);
 			this->button9->TabIndex = 11;
 			this->button9->Text = L"Рівень 2";
-			this->button9->UseVisualStyleBackColor = true;
+			this->button9->UseVisualStyleBackColor = false;
+			this->button9->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button9_MouseEnter);
 			// 
 			// button10
 			// 
-			this->button10->Location = System::Drawing::Point(205, 106);
+			this->button10->BackColor = System::Drawing::Color::Transparent;
+			this->button10->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->button10->Location = System::Drawing::Point(170, 138);
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(75, 61);
 			this->button10->TabIndex = 10;
 			this->button10->Text = L"Рівень 1";
-			this->button10->UseVisualStyleBackColor = true;
+			this->button10->UseVisualStyleBackColor = false;
+			this->button10->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button10_MouseEnter);
 			// 
 			// button11
 			// 
+			this->button11->BackColor = System::Drawing::Color::Transparent;
+			this->button11->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button11->Location = System::Drawing::Point(371, 204);
+			this->button11->ForeColor = System::Drawing::Color::Red;
+			this->button11->Location = System::Drawing::Point(172, 230);
 			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(102, 60);
+			this->button11->Size = System::Drawing::Size(113, 60);
 			this->button11->TabIndex = 15;
 			this->button11->Text = L"💀";
-			this->button11->UseVisualStyleBackColor = true;
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(12, 267);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(685, 13);
-			this->label6->TabIndex = 16;
-			this->label6->Text = L"_________________________________________________________________________________"
-				L"________________________________";
+			this->button11->UseVisualStyleBackColor = false;
+			this->button11->Click += gcnew System::EventHandler(this, &MyForm2::button11_Click);
+			this->button11->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button11_MouseEnter);
 			// 
 			// button12
 			// 
-			this->button12->Location = System::Drawing::Point(133, 303);
+			this->button12->BackColor = System::Drawing::Color::Transparent;
+			this->button12->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button12->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->button12->Location = System::Drawing::Point(459, 292);
 			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(118, 22);
+			this->button12->Size = System::Drawing::Size(144, 22);
 			this->button12->TabIndex = 17;
 			this->button12->Text = L"Назад";
-			this->button12->UseVisualStyleBackColor = true;
+			this->button12->UseVisualStyleBackColor = false;
 			this->button12->Click += gcnew System::EventHandler(this, &MyForm2::button12_Click);
+			this->button12->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button12_MouseEnter);
 			// 
 			// button13
 			// 
-			this->button13->Location = System::Drawing::Point(448, 303);
+			this->button13->BackColor = System::Drawing::Color::Transparent;
+			this->button13->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button13->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->button13->Location = System::Drawing::Point(459, 246);
 			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(118, 22);
+			this->button13->Size = System::Drawing::Size(144, 22);
 			this->button13->TabIndex = 18;
 			this->button13->Text = L"Таблиця рекордів";
-			this->button13->UseVisualStyleBackColor = true;
+			this->button13->UseVisualStyleBackColor = false;
 			this->button13->Click += gcnew System::EventHandler(this, &MyForm2::button13_Click);
+			this->button13->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button13_MouseEnter);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(-2, -4);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(670, 474);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 19;
+			this->pictureBox1->TabStop = false;
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(3, 230);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(161, 100);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox2->TabIndex = 20;
+			this->pictureBox2->TabStop = false;
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(469, 12);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(143, 87);
+			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox3->TabIndex = 21;
+			this->pictureBox3->TabStop = false;
+			// 
+			// pictureBox4
+			// 
+			this->pictureBox4->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
+			this->pictureBox4->Location = System::Drawing::Point(-2, 117);
+			this->pictureBox4->Name = L"pictureBox4";
+			this->pictureBox4->Size = System::Drawing::Size(166, 107);
+			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox4->TabIndex = 22;
+			this->pictureBox4->TabStop = false;
+			// 
+			// pictureBox5
+			// 
+			this->pictureBox5->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
+			this->pictureBox5->Location = System::Drawing::Point(291, 230);
+			this->pictureBox5->Name = L"pictureBox5";
+			this->pictureBox5->Size = System::Drawing::Size(162, 100);
+			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox5->TabIndex = 23;
+			this->pictureBox5->TabStop = false;
 			// 
 			// MyForm2
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(706, 337);
+			this->ClientSize = System::Drawing::Size(616, 326);
+			this->Controls->Add(this->pictureBox5);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->pictureBox4);
+			this->Controls->Add(this->pictureBox3);
+			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->button13);
 			this->Controls->Add(this->button12);
-			this->Controls->Add(this->label6);
 			this->Controls->Add(this->button11);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->button8);
 			this->Controls->Add(this->button9);
 			this->Controls->Add(this->button10);
-			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"MyForm2";
 			this->Text = L"Tangram Tetris";
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &MyForm2::MyForm2_FormClosed);
 			this->Load += gcnew System::EventHandler(this, &MyForm2::MyForm2_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -425,7 +489,77 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	Level1->Show();
 }
 private: System::Void MyForm2_Load(System::Object^ sender, System::EventArgs^ e) {
-
+	pictureBox2->Parent = pictureBox1;
+	pictureBox3->Parent = pictureBox1;
+	pictureBox4->Parent = pictureBox1;
+	pictureBox5->Parent = pictureBox1;
+	button1->Parent = pictureBox1;
+	button2->Parent = pictureBox1;
+	button3->Parent = pictureBox1;
+	button4->Parent = pictureBox1;
+	button5->Parent = pictureBox1;
+	button6->Parent = pictureBox1;
+	button7->Parent = pictureBox1;
+	button8->Parent = pictureBox1;
+	button9->Parent = pictureBox1;
+	button10->Parent = pictureBox1;
+	button11->Parent = pictureBox1;
+	button12->Parent = pictureBox1;
+	button13->Parent = pictureBox1;
+}
+private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button1_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
+}
+private: System::Void button2_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
+}
+private: System::Void button3_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
+}
+private: System::Void button4_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
+}
+private: System::Void button5_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
+}
+private: System::Void button10_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
+}
+private: System::Void button9_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
+}
+private: System::Void button8_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
+}
+private: System::Void button7_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
+}
+private: System::Void button6_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
+}
+private: System::Void button11_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
+}
+private: System::Void button13_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
+}
+private: System::Void button12_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
 }
 };
 }

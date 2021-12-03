@@ -80,8 +80,9 @@ namespace TangramTetris {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(614, 342);
 			this->Controls->Add(this->pictureBox1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm3";
-			this->Text = L"MyForm3";
+			this->Text = L"Tangram Tetris";
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &MyForm3::MyForm3_FormClosed);
 			this->Load += gcnew System::EventHandler(this, &MyForm3::MyForm3_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();

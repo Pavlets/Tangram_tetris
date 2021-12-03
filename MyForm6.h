@@ -496,6 +496,7 @@ namespace TangramTetris {
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"MyForm6";
 			this->Text = L"Tangram Tetris";
