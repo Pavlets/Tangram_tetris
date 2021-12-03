@@ -3,7 +3,7 @@ using namespace WMPLib;
 ref class Sounds
 {
 private:
-	//WindowsMediaPlayer^ pl = gcnew WindowsMediaPlayer();
+	WindowsMediaPlayer^ pl = gcnew WindowsMediaPlayer();
 	public:
 		void Wind() {
 			System::Media::SoundPlayer^ player = gcnew System::Media::SoundPlayer();
@@ -18,8 +18,8 @@ private:
 			player->Play();
 		}
 		void menuin() {
-			//pl->URL = "MoveB.wav";
-			//pl->controls->play();
+			pl->URL = "MoveB.wav";
+			pl->controls->play();
 		}
 		void PereWind() {
 			System::Media::SoundPlayer^ player = gcnew System::Media::SoundPlayer();
