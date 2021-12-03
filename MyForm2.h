@@ -2,6 +2,7 @@
 #include "MyForm5.h"
 #include "MyForm6.h"
 #include "main.h"
+#include "Sounds.h"
 
 namespace TangramTetris {
 
@@ -12,6 +13,7 @@ namespace TangramTetris {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Xml;
+	using namespace WMPLib;
 
 	/// <summary>
 	/// Сводка для MyForm2
@@ -23,6 +25,8 @@ namespace TangramTetris {
 		{
 			InitializeComponent();
 			this->CenterToScreen();
+			Sounds sd;
+			sd.menustart();
 			//
 			//TODO: добавьте код конструктора
 			//
@@ -421,7 +425,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	Level1->Show();
 }
 private: System::Void MyForm2_Load(System::Object^ sender, System::EventArgs^ e) {
-	
+
 }
 };
 }

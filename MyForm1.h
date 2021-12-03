@@ -1,5 +1,6 @@
 #pragma once
-#include "MyForm2.h"
+#include "Sounds.h"
+#include "MyForm3.h"
 #include "MyForm4.h"
 
 namespace TangramTetris {
@@ -46,6 +47,7 @@ namespace TangramTetris {
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 
+
 	protected:
 
 	private:
@@ -54,11 +56,15 @@ namespace TangramTetris {
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
+
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Требуемый метод для поддержки конструктора — не изменяйте 
 		/// содержимое этого метода с помощью редактора кода.
 		/// </summary>
+		
+
+
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm1::typeid));
@@ -97,6 +103,7 @@ namespace TangramTetris {
 			this->button1->Text = L"Почати";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm1::button1_Click);
+			this->button1->MouseEnter += gcnew System::EventHandler(this, &MyForm1::button1_MouseEnter);
 			// 
 			// button3
 			// 
@@ -112,6 +119,7 @@ namespace TangramTetris {
 			this->button3->Text = L"Допомога";
 			this->button3->UseVisualStyleBackColor = false;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm1::button3_Click);
+			this->button3->MouseEnter += gcnew System::EventHandler(this, &MyForm1::button3_MouseEnter);
 			// 
 			// button4
 			// 
@@ -127,6 +135,7 @@ namespace TangramTetris {
 			this->button4->Text = L"Вихід";
 			this->button4->UseVisualStyleBackColor = false;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm1::button4_Click);
+			this->button4->MouseEnter += gcnew System::EventHandler(this, &MyForm1::button4_MouseEnter);
 			// 
 			// pictureBox1
 			// 
@@ -156,7 +165,6 @@ namespace TangramTetris {
 			this->Text = L"Tangram Tetris";
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &MyForm1::MyForm1_FormClosed);
 			this->Load += gcnew System::EventHandler(this, &MyForm1::MyForm1_Load);
-			this->Shown += gcnew System::EventHandler(this, &MyForm1::MyForm1_Shown);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -170,33 +178,37 @@ namespace TangramTetris {
 		Application::Exit();
 	}
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	MyForm2^ Level_Select = gcnew MyForm2();
+	/*MyForm2^ Level_Select = gcnew MyForm2();
 	Level_Select->Show();
+	MyForm1::Hide();*/
+	MyForm3^ Perehid = gcnew MyForm3();
+	Perehid->Show();
 	MyForm1::Hide();
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	MyForm4^ Help = gcnew MyForm4();
 	Help->Show();
 }
-private: System::Void MyForm1_Shown(System::Object^ sender, System::EventArgs^ e) {
-	try
-	{
-		System::Media::SoundPlayer^ player = gcnew System::Media::SoundPlayer();
-		player->SoundLocation = "MenuStart.wav";
-		player->Load();
-		player->Play();
-	}
-	catch (Win32Exception^ ex)
-	{
-		MessageBox::Show(ex->Message);
-	}
-}
+
 private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
 	this->CenterToScreen();
 	label1->Parent = pictureBox1;
 	button1->Parent = pictureBox1;
 	button3->Parent = pictureBox1;
 	button4->Parent = pictureBox1;
+}
+
+private: System::Void button1_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
+}
+private: System::Void button3_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
+}
+private: System::Void button4_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Sounds sd;
+	sd.menuin();
 }
 };
 }
