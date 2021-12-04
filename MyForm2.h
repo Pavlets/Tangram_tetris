@@ -202,9 +202,10 @@ namespace TangramTetris {
 			this->button1->BackColor = System::Drawing::Color::Transparent;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->ForeColor = System::Drawing::Color::Lime;
-			this->button1->Location = System::Drawing::Point(12, 29);
+			this->button1->Location = System::Drawing::Point(16, 36);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 61);
+			this->button1->Size = System::Drawing::Size(100, 75);
 			this->button1->TabIndex = 5;
 			this->button1->Text = L"Рівень 1";
 			this->button1->UseVisualStyleBackColor = false;
@@ -216,12 +217,14 @@ namespace TangramTetris {
 			this->button2->BackColor = System::Drawing::Color::Transparent;
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->ForeColor = System::Drawing::Color::Lime;
-			this->button2->Location = System::Drawing::Point(106, 29);
+			this->button2->Location = System::Drawing::Point(141, 36);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 61);
+			this->button2->Size = System::Drawing::Size(100, 75);
 			this->button2->TabIndex = 6;
 			this->button2->Text = L"Рівень 2";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm2::button2_Click);
 			this->button2->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button2_MouseEnter);
 			// 
 			// button3
@@ -229,12 +232,14 @@ namespace TangramTetris {
 			this->button3->BackColor = System::Drawing::Color::Transparent;
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button3->ForeColor = System::Drawing::Color::Lime;
-			this->button3->Location = System::Drawing::Point(199, 29);
+			this->button3->Location = System::Drawing::Point(265, 36);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 61);
+			this->button3->Size = System::Drawing::Size(100, 75);
 			this->button3->TabIndex = 7;
 			this->button3->Text = L"Рівень 3";
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm2::button3_Click);
 			this->button3->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button3_MouseEnter);
 			// 
 			// button4
@@ -242,12 +247,14 @@ namespace TangramTetris {
 			this->button4->BackColor = System::Drawing::Color::Transparent;
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button4->ForeColor = System::Drawing::Color::Lime;
-			this->button4->Location = System::Drawing::Point(291, 29);
+			this->button4->Location = System::Drawing::Point(388, 36);
+			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(75, 61);
+			this->button4->Size = System::Drawing::Size(100, 75);
 			this->button4->TabIndex = 8;
 			this->button4->Text = L"Рівень 4";
 			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm2::button4_Click);
 			this->button4->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button4_MouseEnter);
 			// 
 			// button5
@@ -255,12 +262,14 @@ namespace TangramTetris {
 			this->button5->BackColor = System::Drawing::Color::Transparent;
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->ForeColor = System::Drawing::Color::Lime;
-			this->button5->Location = System::Drawing::Point(388, 29);
+			this->button5->Location = System::Drawing::Point(517, 36);
+			this->button5->Margin = System::Windows::Forms::Padding(4);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(75, 61);
+			this->button5->Size = System::Drawing::Size(100, 75);
 			this->button5->TabIndex = 9;
 			this->button5->Text = L"Рівень 5";
 			this->button5->UseVisualStyleBackColor = false;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm2::button5_Click);
 			this->button5->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button5_MouseEnter);
 			// 
 			// button6
@@ -269,12 +278,14 @@ namespace TangramTetris {
 			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->button6->Location = System::Drawing::Point(529, 138);
+			this->button6->Location = System::Drawing::Point(705, 170);
+			this->button6->Margin = System::Windows::Forms::Padding(4);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(75, 61);
+			this->button6->Size = System::Drawing::Size(100, 75);
 			this->button6->TabIndex = 14;
 			this->button6->Text = L"Рівень 5";
 			this->button6->UseVisualStyleBackColor = false;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm2::button6_Click);
 			this->button6->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button6_MouseEnter);
 			// 
 			// button7
@@ -283,12 +294,14 @@ namespace TangramTetris {
 			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->button7->Location = System::Drawing::Point(440, 138);
+			this->button7->Location = System::Drawing::Point(587, 170);
+			this->button7->Margin = System::Windows::Forms::Padding(4);
 			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(75, 61);
+			this->button7->Size = System::Drawing::Size(100, 75);
 			this->button7->TabIndex = 13;
 			this->button7->Text = L"Рівень 4";
 			this->button7->UseVisualStyleBackColor = false;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm2::button7_Click);
 			this->button7->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button7_MouseEnter);
 			// 
 			// button8
@@ -297,12 +310,14 @@ namespace TangramTetris {
 			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->button8->Location = System::Drawing::Point(350, 138);
+			this->button8->Location = System::Drawing::Point(467, 170);
+			this->button8->Margin = System::Windows::Forms::Padding(4);
 			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(75, 61);
+			this->button8->Size = System::Drawing::Size(100, 75);
 			this->button8->TabIndex = 12;
 			this->button8->Text = L"Рівень 3";
 			this->button8->UseVisualStyleBackColor = false;
+			this->button8->Click += gcnew System::EventHandler(this, &MyForm2::button8_Click);
 			this->button8->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button8_MouseEnter);
 			// 
 			// button9
@@ -311,12 +326,14 @@ namespace TangramTetris {
 			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->button9->Location = System::Drawing::Point(261, 138);
+			this->button9->Location = System::Drawing::Point(348, 170);
+			this->button9->Margin = System::Windows::Forms::Padding(4);
 			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(75, 61);
+			this->button9->Size = System::Drawing::Size(100, 75);
 			this->button9->TabIndex = 11;
 			this->button9->Text = L"Рівень 2";
 			this->button9->UseVisualStyleBackColor = false;
+			this->button9->Click += gcnew System::EventHandler(this, &MyForm2::button9_Click);
 			this->button9->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button9_MouseEnter);
 			// 
 			// button10
@@ -325,12 +342,14 @@ namespace TangramTetris {
 			this->button10->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->button10->Location = System::Drawing::Point(170, 138);
+			this->button10->Location = System::Drawing::Point(227, 170);
+			this->button10->Margin = System::Windows::Forms::Padding(4);
 			this->button10->Name = L"button10";
-			this->button10->Size = System::Drawing::Size(75, 61);
+			this->button10->Size = System::Drawing::Size(100, 75);
 			this->button10->TabIndex = 10;
 			this->button10->Text = L"Рівень 1";
 			this->button10->UseVisualStyleBackColor = false;
+			this->button10->Click += gcnew System::EventHandler(this, &MyForm2::button10_Click);
 			this->button10->MouseEnter += gcnew System::EventHandler(this, &MyForm2::button10_MouseEnter);
 			// 
 			// button11
@@ -340,9 +359,10 @@ namespace TangramTetris {
 			this->button11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button11->ForeColor = System::Drawing::Color::Red;
-			this->button11->Location = System::Drawing::Point(172, 230);
+			this->button11->Location = System::Drawing::Point(229, 283);
+			this->button11->Margin = System::Windows::Forms::Padding(4);
 			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(113, 60);
+			this->button11->Size = System::Drawing::Size(151, 74);
 			this->button11->TabIndex = 15;
 			this->button11->Text = L"💀";
 			this->button11->UseVisualStyleBackColor = false;
@@ -354,9 +374,10 @@ namespace TangramTetris {
 			this->button12->BackColor = System::Drawing::Color::Transparent;
 			this->button12->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button12->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->button12->Location = System::Drawing::Point(459, 292);
+			this->button12->Location = System::Drawing::Point(612, 359);
+			this->button12->Margin = System::Windows::Forms::Padding(4);
 			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(144, 22);
+			this->button12->Size = System::Drawing::Size(192, 27);
 			this->button12->TabIndex = 17;
 			this->button12->Text = L"Назад";
 			this->button12->UseVisualStyleBackColor = false;
@@ -368,9 +389,10 @@ namespace TangramTetris {
 			this->button13->BackColor = System::Drawing::Color::Transparent;
 			this->button13->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button13->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->button13->Location = System::Drawing::Point(459, 246);
+			this->button13->Location = System::Drawing::Point(612, 303);
+			this->button13->Margin = System::Windows::Forms::Padding(4);
 			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(144, 22);
+			this->button13->Size = System::Drawing::Size(192, 27);
 			this->button13->TabIndex = 18;
 			this->button13->Text = L"Таблиця рекордів";
 			this->button13->UseVisualStyleBackColor = false;
@@ -380,9 +402,10 @@ namespace TangramTetris {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(-2, -4);
+			this->pictureBox1->Location = System::Drawing::Point(-3, -5);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(670, 474);
+			this->pictureBox1->Size = System::Drawing::Size(893, 583);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 19;
 			this->pictureBox1->TabStop = false;
@@ -391,9 +414,10 @@ namespace TangramTetris {
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(3, 230);
+			this->pictureBox2->Location = System::Drawing::Point(4, 283);
+			this->pictureBox2->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(161, 100);
+			this->pictureBox2->Size = System::Drawing::Size(215, 123);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox2->TabIndex = 20;
 			this->pictureBox2->TabStop = false;
@@ -402,9 +426,10 @@ namespace TangramTetris {
 			// 
 			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(469, 12);
+			this->pictureBox3->Location = System::Drawing::Point(625, 15);
+			this->pictureBox3->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(143, 87);
+			this->pictureBox3->Size = System::Drawing::Size(191, 107);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox3->TabIndex = 21;
 			this->pictureBox3->TabStop = false;
@@ -413,9 +438,10 @@ namespace TangramTetris {
 			// 
 			this->pictureBox4->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
-			this->pictureBox4->Location = System::Drawing::Point(-2, 117);
+			this->pictureBox4->Location = System::Drawing::Point(-3, 144);
+			this->pictureBox4->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(166, 107);
+			this->pictureBox4->Size = System::Drawing::Size(221, 132);
 			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox4->TabIndex = 22;
 			this->pictureBox4->TabStop = false;
@@ -424,18 +450,19 @@ namespace TangramTetris {
 			// 
 			this->pictureBox5->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
-			this->pictureBox5->Location = System::Drawing::Point(291, 230);
+			this->pictureBox5->Location = System::Drawing::Point(388, 283);
+			this->pictureBox5->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(162, 100);
+			this->pictureBox5->Size = System::Drawing::Size(216, 123);
 			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox5->TabIndex = 23;
 			this->pictureBox5->TabStop = false;
 			// 
 			// MyForm2
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(616, 326);
+			this->ClientSize = System::Drawing::Size(821, 401);
 			this->Controls->Add(this->pictureBox5);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->pictureBox4);
@@ -456,6 +483,7 @@ namespace TangramTetris {
 			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->MaximizeBox = false;
 			this->Name = L"MyForm2";
 			this->Text = L"Tangram Tetris";
@@ -470,24 +498,7 @@ namespace TangramTetris {
 
 		}
 #pragma endregion
-	private: System::Void MyForm2_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
-		Application::Exit();
-	}
-	private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
-	MyForm5^ Records = gcnew MyForm5();
-	Records->Show();
-}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	Image^ img_back = Image::FromFile("B1.jpg");
 
-	Level = 1;
-	GetData obj;
-	ReadXML(&obj);
-
-	MyForm6^ Level1 = gcnew MyForm6(Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
-	Level1->Show();
-}
 private: System::Void MyForm2_Load(System::Object^ sender, System::EventArgs^ e) {
 	pictureBox2->Parent = pictureBox1;
 	pictureBox3->Parent = pictureBox1;
@@ -507,7 +518,13 @@ private: System::Void MyForm2_Load(System::Object^ sender, System::EventArgs^ e)
 	button12->Parent = pictureBox1;
 	button13->Parent = pictureBox1;
 }
-private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
+	   private: System::Void MyForm2_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
+		   Application::Exit();
+	   }
+	private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
+	MyForm5^ Records = gcnew MyForm5();
+	Records->Show();
 }
 private: System::Void button1_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	Sounds sd;
@@ -560,6 +577,94 @@ private: System::Void button13_MouseEnter(System::Object^ sender, System::EventA
 private: System::Void button12_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	Sounds sd;
 	sd.menuin();
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	Level = 1;
+	GetData obj;
+	ReadXML(&obj);
+
+	MyForm6^ Level = gcnew MyForm6(Level_Name, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+	Level->Show();
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	Level = 2;
+	GetData obj;
+	ReadXML(&obj);
+
+	MyForm6^ Level = gcnew MyForm6(Level_Name, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+	Level->Show();
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	Level = 3;
+	GetData obj;
+	ReadXML(&obj);
+
+	MyForm6^ Level = gcnew MyForm6(Level_Name, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+	Level->Show();
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	Level = 4;
+	GetData obj;
+	ReadXML(&obj);
+
+	MyForm6^ Level = gcnew MyForm6(Level_Name, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+	Level->Show();
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	Level = 5;
+	GetData obj;
+	ReadXML(&obj);
+
+	MyForm6^ Level = gcnew MyForm6(Level_Name, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+	Level->Show();
+}
+private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
+	Level = 6;
+	GetData obj;
+	ReadXML(&obj);
+
+	MyForm6^ Level = gcnew MyForm6(Level_Name, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+	Level->Show();
+}
+private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+	Level = 7;
+	GetData obj;
+	ReadXML(&obj);
+
+	MyForm6^ Level = gcnew MyForm6(Level_Name, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+	Level->Show();
+}
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+	Level = 8;
+	GetData obj;
+	ReadXML(&obj);
+
+	MyForm6^ Level = gcnew MyForm6(Level_Name, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+	Level->Show();
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	Level = 9;
+	GetData obj;
+	ReadXML(&obj);
+
+	MyForm6^ Level = gcnew MyForm6(Level_Name, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+	Level->Show();
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	Level = 10;
+	GetData obj;
+	ReadXML(&obj);
+
+	MyForm6^ Level = gcnew MyForm6(Level_Name, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+	Level->Show();
+}
+private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
+	Level = 11;
+	GetData obj;
+	ReadXML(&obj);
+
+	MyForm6^ Level = gcnew MyForm6(Level_Name, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+	Level->Show();
 }
 };
 }
