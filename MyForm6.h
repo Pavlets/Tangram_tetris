@@ -497,17 +497,39 @@ namespace TangramTetris {
 #pragma endregion
 	private: System::Void MyForm6_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->Text = level_name;
-
-		/*for (int i = 0; i < field_size; i++)
-			delete[] field[i];
-		delete[] field;*///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		F1_count->Text = "X" + F_1;
+		if (F_1 == 0) {
+			ButtonF1->Enabled = false;
+		}
 		F2_count->Text = "X" + F_2;
+		if (F_2 == 0) {
+			ButtonF2->Enabled = false;
+		}
 		F3_count->Text = "X" + F_3;
+		if (F_3 == 0) {
+			ButtonF3_1->Enabled = false;
+			ButtonF3_2->Enabled = false;
+		}
 		F4_count->Text = "X" + F_4;
+		if (F_4 == 0) {
+			ButtonF4_1->Enabled = false;
+			ButtonF4_2->Enabled = false;
+		}
 		F5_count->Text = "X" + F_5;
+		if (F_5 == 0) {
+			ButtonF5_1->Enabled = false;
+			ButtonF5_2->Enabled = false;
+		}
 		F6_count->Text = "X" + F_6;
+		if (F_6 == 0) {
+			ButtonF6_1->Enabled = false;
+			ButtonF6_2->Enabled = false;
+		}
 		F7_count->Text = "X" + F_7;
+		if (F_7 == 0) {
+			ButtonF7_1->Enabled = false;
+			ButtonF7_2->Enabled = false;
+		}
 
 		tableLayoutPanel1->ColumnCount = field_size;
 		tableLayoutPanel1->RowCount = field_size;
