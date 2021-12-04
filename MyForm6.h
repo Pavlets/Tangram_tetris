@@ -519,10 +519,14 @@ namespace TangramTetris {
 				tableLayoutPanel1->Controls->Add(picture, j, i);
 				if (field[i * field_size + j + 1] == '1')
 					tableLayoutPanel1->GetControlFromPosition(j, i)->BackColor = Color::White;
-				else if (field[i * field_size + j + 1] == '0')
+				else if (field[i * field_size + j + 1] == '0') {
 					tableLayoutPanel1->GetControlFromPosition(j, i)->BackColor = Color::Gray;
-				else if (field[i * field_size + j + 1] == '2')
+					tableLayoutPanel1->GetControlFromPosition(j, i)->Enabled = false;
+				}
+				else if (field[i * field_size + j + 1] == '2') {
 					tableLayoutPanel1->GetControlFromPosition(j, i)->BackColor = Color::Black;
+					tableLayoutPanel1->GetControlFromPosition(j, i)->Enabled = false;
+				}
 			}
 
 		/*int field_of_play[yp][yp];
