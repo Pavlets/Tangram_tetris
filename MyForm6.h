@@ -500,35 +500,47 @@ namespace TangramTetris {
 		F1_count->Text = "X" + F_1;
 		if (F_1 == 0) {
 			ButtonF1->Enabled = false;
+			ButtonF1->BackgroundImage = Image::FromFile("Pictures/F1_b.png");
 		}
 		F2_count->Text = "X" + F_2;
 		if (F_2 == 0) {
 			ButtonF2->Enabled = false;
+			ButtonF2->BackgroundImage = Image::FromFile("Pictures/F2_b.png");
 		}
 		F3_count->Text = "X" + F_3;
 		if (F_3 == 0) {
 			ButtonF3_1->Enabled = false;
+			ButtonF3_1->BackgroundImage = Image::FromFile("Pictures/F3.1_b.png");
 			ButtonF3_2->Enabled = false;
+			ButtonF3_2->BackgroundImage = Image::FromFile("Pictures/F3.2_b.png");
 		}
 		F4_count->Text = "X" + F_4;
 		if (F_4 == 0) {
 			ButtonF4_1->Enabled = false;
+			ButtonF4_1->BackgroundImage = Image::FromFile("Pictures/F4.1_b.png");
 			ButtonF4_2->Enabled = false;
+			ButtonF4_2->BackgroundImage = Image::FromFile("Pictures/F4.2_b.png");
 		}
 		F5_count->Text = "X" + F_5;
 		if (F_5 == 0) {
 			ButtonF5_1->Enabled = false;
+			ButtonF5_1->BackgroundImage = Image::FromFile("Pictures/F5.1_b.png");
 			ButtonF5_2->Enabled = false;
+			ButtonF5_2->BackgroundImage = Image::FromFile("Pictures/F5.2_b.png");
 		}
 		F6_count->Text = "X" + F_6;
 		if (F_6 == 0) {
 			ButtonF6_1->Enabled = false;
+			ButtonF6_1->BackgroundImage = Image::FromFile("Pictures/F6.1_b.png");
 			ButtonF6_2->Enabled = false;
+			ButtonF6_2->BackgroundImage = Image::FromFile("Pictures/F6.2_b.png");
 		}
 		F7_count->Text = "X" + F_7;
 		if (F_7 == 0) {
 			ButtonF7_1->Enabled = false;
+			ButtonF7_1->BackgroundImage = Image::FromFile("Pictures/F7.1_b.png");
 			ButtonF7_2->Enabled = false;
+			ButtonF7_2->BackgroundImage = Image::FromFile("Pictures/F7.2_b.png");
 		}
 
 		tableLayoutPanel1->ColumnCount = field_size;
