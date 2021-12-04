@@ -25,13 +25,23 @@ namespace TangramTetris {
 		String^ field;
 		String^ ButtonFClick = "";
 		bool FTurn = false;
-		MyForm6(String^ level_name, int field_size, String^ field, int F_1,  int F_2, int F_3, int F_4, int F_5, int F_6, int F_7)
+		bool level_is_finish;
+	private: System::Windows::Forms::Label^ label1;
+	public:
+	private: System::Windows::Forms::Label^ label2;
+
+	public:
+	private: System::Windows::Forms::Timer^ timer1;
+	public:
+		Image^ img_back;
+		MyForm6(String^ level_name, Image^ img_back, int field_size, String^ field, int F_1,  int F_2, int F_3, int F_4, int F_5, int F_6, int F_7)
 		{
 			InitializeComponent();
 			this->CenterToScreen();
 			//Обрабатываем данные
 			//Или записываем их в поле
 			this->level_name = level_name;
+			this->img_back = img_back;
 			this->field_size = field_size;
 			this->field = field;
 			this->F_1 = F_1;
@@ -71,7 +81,7 @@ namespace TangramTetris {
 
 	private: System::Windows::Forms::Label^ F2_count;
 
-	protected:
+	/*protected:
 		/// <summary>
 		/// Освободить все используемые ресурсы.
 		/// </summary>
@@ -81,16 +91,16 @@ namespace TangramTetris {
 			{
 				delete components;
 			}
+		//private: System::ComponentModel::IContainer^ components;
+		//protected:
 		}
-
-
+	private: System::ComponentModel::IContainer^ components;
 	protected:
 
-	private:
-		/// <summary>
-		/// Обязательная переменная конструктора.
-		/// </summary>
-		System::ComponentModel::Container^ components;
+
+
+
+	private:		System::ComponentModel::Container^ components;*/
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -121,6 +131,8 @@ namespace TangramTetris {
 			this->ButtonF3_1 = (gcnew System::Windows::Forms::Button());
 			this->ButtonF2 = (gcnew System::Windows::Forms::Button());
 			this->ButtonF1 = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -474,6 +486,33 @@ namespace TangramTetris {
 			this->ButtonF1->UseVisualStyleBackColor = false;
 			this->ButtonF1->Click += gcnew System::EventHandler(this, &MyForm6::ButtonF1_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Constantia", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label1->ForeColor = System::Drawing::Color::Lime;
+			this->label1->Location = System::Drawing::Point(482, 26);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(228, 58);
+			this->label1->TabIndex = 3;
+			this->label1->Text = L"Рахунок:";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Book Antiqua", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label2->ForeColor = System::Drawing::Color::Yellow;
+			this->label2->Location = System::Drawing::Point(716, 28);
+			this->label2->Name = L"label2";
+			this->label2->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
+			this->label2->Size = System::Drawing::Size(48, 56);
+			this->label2->TabIndex = 4;
+			this->label2->Text = L"0";
+			// 
 			// MyForm6
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -481,6 +520,8 @@ namespace TangramTetris {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(932, 462);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
@@ -493,11 +534,14 @@ namespace TangramTetris {
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void MyForm6_Load(System::Object^ sender, System::EventArgs^ e) {
+		//timer1->Interval = 500;
 		this->Text = level_name;
+		this->BackgroundImage = img_back;
 		F1_count->Text = "X" + F_1;
 		if (F_1 == 0) {
 			ButtonF1->Enabled = false;
@@ -592,108 +636,119 @@ namespace TangramTetris {
 						else if (ButtonFClick == "F1" && FTurn) {
 
 						}
-						/*if (ButtonFClick == "F1" && !FTurn) {
-							if (j > 0 && j < field_size - 2) {
+						if (ButtonFClick == "F2" && !FTurn) {
+							if (j > 0 && i > 0) {
 								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::White &&
 									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::White &&
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::White &&
-									tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor == Color::White)
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::White &&
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j - 1)->BackColor == Color::White)
 								{
-									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor = Color::Aqua;
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor = Color::Yellow;
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::Yellow;
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor = Color::Yellow;
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j - 1)->BackColor = Color::Yellow;
 								}
 							}
 						}
-						else if (ButtonFClick == "F1" && FTurn) {
-
-						}
-						if (ButtonFClick == "F1" && !FTurn) {
-							if (j > 0 && j < field_size - 2) {
+						else if (ButtonFClick == "F2" && FTurn) {
+							if (j > 0 && i > 0) {
 								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::White &&
 									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::White &&
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::White &&
-									tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor == Color::White)
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::White &&
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j - 1)->BackColor == Color::White)
 								{
-									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor = Color::Aqua;
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor = Color::Yellow;
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::Yellow;
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor = Color::Yellow;
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j - 1)->BackColor = Color::Yellow;
 								}
 							}
 						}
-						else if (ButtonFClick == "F1" && FTurn) {
-
-						}
-						if (ButtonFClick == "F1" && !FTurn) {
-							if (j > 0 && j < field_size - 2) {
+						if (ButtonFClick == "F3" && !FTurn) {
+							if (j > 1 && i < field_size - 1) {
 								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::White &&
+									tableLayoutPanel1->GetControlFromPosition(i, j - 2)->BackColor == Color::White &&
 									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::White &&
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::White &&
-									tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor == Color::White)
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::White)
 								{
-									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor = Color::Aqua;
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor = Color::Orange;
+									tableLayoutPanel1->GetControlFromPosition(i, j - 2)->BackColor = Color::Orange;
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::Orange;
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor = Color::Orange;
 								}
 							}
 						}
-						else if (ButtonFClick == "F1" && FTurn) {
+						else if (ButtonFClick == "F3" && FTurn) {
 
 						}
-						if (ButtonFClick == "F1" && !FTurn) {
-							if (j > 0 && j < field_size - 2) {
+						if (ButtonFClick == "F4" && !FTurn) {
+							if (j > 1 && i > 0) {
 								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::White &&
+									tableLayoutPanel1->GetControlFromPosition(i, j - 2)->BackColor == Color::White &&
 									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::White &&
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::White &&
-									tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor == Color::White)
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::White)
 								{
-									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor = Color::Aqua;
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor = Color::BlueViolet;
+									tableLayoutPanel1->GetControlFromPosition(i, j - 2)->BackColor = Color::BlueViolet;
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::BlueViolet;
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor = Color::BlueViolet;
 								}
 							}
 						}
-						else if (ButtonFClick == "F1" && FTurn) {
+						else if (ButtonFClick == "F4" && FTurn) {
 
 						}
-						if (ButtonFClick == "F1" && !FTurn) {
-							if (j > 0 && j < field_size - 2) {
+						if (ButtonFClick == "F5" && !FTurn) {
+							if (j > 0 && j < field_size - 1 && i < field_size - 1) {
 								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::White &&
 									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::White &&
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::White &&
-									tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor == Color::White)
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::White &&
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->BackColor == Color::White)
 								{
-									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor = Color::Aqua;
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor = Color::LawnGreen;
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::LawnGreen;
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor = Color::LawnGreen;
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->BackColor = Color::LawnGreen;
 								}
 							}
 						}
-						else if (ButtonFClick == "F1" && FTurn) {
+						else if (ButtonFClick == "F5" && FTurn) {
 
 						}
-						if (ButtonFClick == "F1" && !FTurn) {
-							if (j > 0 && j < field_size - 2) {
-								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::White &&
+						if (ButtonFClick == "F6" && !FTurn) {
+							if (j > 0 && j < field_size - 1 && i < field_size - 1) {
+								if (tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::White &&
 									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::White &&
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::White &&
-									tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor == Color::White)
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::White &&
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j - 1)->BackColor == Color::White)
 								{
-									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor = Color::Aqua;
-									tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor = Color::Aqua;
+									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor = Color::PaleVioletRed;
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::PaleVioletRed;
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor = Color::PaleVioletRed;
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j - 1)->BackColor = Color::PaleVioletRed;
 								}
 							}
 						}
-						else if (ButtonFClick == "F1" && FTurn) {
+						else if (ButtonFClick == "F6" && FTurn) {
 
-						}*/
+						}
+						if (ButtonFClick == "F7" && !FTurn) {
+							if (i > 0 && i < field_size - 1 && j > 0) {
+								if (tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::White &&
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::White &&
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::White &&
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::White)
+								{
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor = Color::HotPink;
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor = Color::HotPink;
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::HotPink;
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor = Color::HotPink;
+								}
+							}
+						}
+						else if (ButtonFClick == "F7" && FTurn) {
+
+						}
 					}
 				}
 			}
@@ -720,8 +775,130 @@ namespace TangramTetris {
 						else if (ButtonFClick == "F1" && FTurn) {
 
 						}
+						if (ButtonFClick == "F2" && !FTurn) {
+							if (j > 0 && i > 0) {
+								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::Yellow &&
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Yellow &&
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::Yellow &&
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j - 1)->BackColor == Color::Yellow)
+								{
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j - 1)->Cursor = Cursors::Default;
+								}
+							}
+						}
+						else if (ButtonFClick == "F2" && FTurn) {
+							if (j > 0 && i > 0) {
+								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::Yellow &&
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Yellow &&
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::Yellow &&
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j - 1)->BackColor == Color::Yellow)
+								{
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j - 1)->Cursor = Cursors::Default;
+								}
+							}
+						}
+						if (ButtonFClick == "F3" && !FTurn) {
+							if (j > 1 && i < field_size - 1) {
+								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::Orange &&
+									tableLayoutPanel1->GetControlFromPosition(i, j - 2)->BackColor == Color::Orange &&
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Orange &&
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::Orange)
+								{
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i, j - 2)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
+								}
+							}
+						}
+						else if (ButtonFClick == "F3" && FTurn) {
+
+						}
+						if (ButtonFClick == "F4" && !FTurn) {
+							if (j > 1 && i > 0) {
+								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::BlueViolet &&
+									tableLayoutPanel1->GetControlFromPosition(i, j - 2)->BackColor == Color::BlueViolet &&
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::BlueViolet &&
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::BlueViolet)
+								{
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i, j - 2)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
+								}
+							}
+						}
+						else if (ButtonFClick == "F4" && FTurn) {
+
+						}
+						if (ButtonFClick == "F5" && !FTurn) {
+							if (j > 0 && j < field_size - 1 && i < field_size - 1) {
+								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::LawnGreen &&
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::LawnGreen &&
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::LawnGreen &&
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->BackColor == Color::LawnGreen)
+								{
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->Cursor = Cursors::Default;
+								}
+							}
+						}
+						else if (ButtonFClick == "F5" && FTurn) {
+
+						}
+						if (ButtonFClick == "F6" && !FTurn) {
+							if (j > 0 && j < field_size - 1 && i < field_size - 1) {
+								if (tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::PaleVioletRed &&
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::PaleVioletRed &&
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::PaleVioletRed &&
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j - 1)->BackColor == Color::PaleVioletRed)
+								{
+									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j - 1)->Cursor = Cursors::Default;
+								}
+							}
+						}
+						else if (ButtonFClick == "F6" && FTurn) {
+
+						}
+						if (ButtonFClick == "F7" && !FTurn) {
+							if (i > 0 && i < field_size - 1 && j > 0) {
+								if (tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::HotPink &&
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::HotPink &&
+									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::HotPink &&
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::HotPink)
+								{
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
+								}
+							}
+						}
+						else if (ButtonFClick == "F7" && FTurn) {
+
+						}
 					}
 				}
+				for (int i = 0; i < field_size; i++)
+					for (int j = 0; j < field_size; j++)
+						if (tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor == Cursors::Default)
+							count++;
+				if (count == field_size * field_size) {
+					MessageBox::Show("Ви пройшли рiвень! Ваш рахунок:" + count, "Перемога!", MessageBoxButtons::OK, MessageBoxIcon::None);
+					this->Close();
+				}
+				count = 0;
 		}
 		else {
 			if (!FTurn)
