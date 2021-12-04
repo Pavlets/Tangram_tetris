@@ -21,12 +21,6 @@ namespace TangramTetris {
 		int field_size;
 		String^ level_name;
 		String^ field;
-
-	public:
-
-	public:
-
-	public:
 		String^ ButtonFClick = "";
 		bool FTurn = false;
 		MyForm6(String^ level_name, int field_size, String^ field, int F_1,  int F_2, int F_3, int F_4, int F_5, int F_6, int F_7)
@@ -46,7 +40,6 @@ namespace TangramTetris {
 			this->F_6 = F_6;
 			this->F_7 = F_7;
 		}
-
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::Button^ ButtonF1;
@@ -504,6 +497,10 @@ namespace TangramTetris {
 #pragma endregion
 	private: System::Void MyForm6_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->Text = level_name;
+
+		/*for (int i = 0; i < field_size; i++)
+			delete[] field[i];
+		delete[] field;*///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		F1_count->Text = "X" + F_1;
 		F2_count->Text = "X" + F_2;
 		F3_count->Text = "X" + F_3;
@@ -519,8 +516,13 @@ namespace TangramTetris {
 				PictureBox^ picture = gcnew PictureBox();
 				picture->Dock = DockStyle::Fill;
 				picture->Enabled = false;
-				tableLayoutPanel1->Controls->Add(picture, i, j);
-				tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::White;
+				tableLayoutPanel1->Controls->Add(picture, j, i);
+				if (field[i * field_size + j + 1] == '1')
+					tableLayoutPanel1->GetControlFromPosition(j, i)->BackColor = Color::White;
+				else if (field[i * field_size + j + 1] == '0')
+					tableLayoutPanel1->GetControlFromPosition(j, i)->BackColor = Color::Gray;
+				else if (field[i * field_size + j + 1] == '2')
+					tableLayoutPanel1->GetControlFromPosition(j, i)->BackColor = Color::Black;
 			}
 
 		/*int field_of_play[yp][yp];
@@ -552,7 +554,8 @@ namespace TangramTetris {
 			}
 	}
 	private: System::Void ButtonF1_Click(System::Object^ sender, System::EventArgs^ e) {
-		ButtonFClick = "F1";
+		ButtonFClick = "F1"; 
+		MessageBox::Show(field, "Закрытие", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 	private: System::Void ButtonF2_Click(System::Object^ sender, System::EventArgs^ e) {
 		ButtonFClick = "F2";
