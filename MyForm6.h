@@ -164,8 +164,7 @@ namespace TangramTetris {
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10)));
 			this->tableLayoutPanel1->Size = System::Drawing::Size(437, 437);
 			this->tableLayoutPanel1->TabIndex = 1;
-			this->tableLayoutPanel1->Click += gcnew System::EventHandler(this, &MyForm6::tableLayoutPanel1_Click);
-			this->tableLayoutPanel1->MouseDoubleClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm6::tableLayoutPanel1_MouseDoubleClick);
+			this->tableLayoutPanel1->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm6::tableLayoutPanel1_MouseDown);
 			this->tableLayoutPanel1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm6::tableLayoutPanel1_MouseMove);
 			// 
 			// groupBox1
@@ -553,47 +552,38 @@ namespace TangramTetris {
 				tableLayoutPanel1->Controls->Add(picture, j, i);
 				if (field[i * field_size + j + 1] == '1')
 					tableLayoutPanel1->GetControlFromPosition(j, i)->BackColor = Color::White;
-				else if (field[i * field_size + j + 1] == '0') {
+				else if (field[i * field_size + j + 1] == '0')
 					tableLayoutPanel1->GetControlFromPosition(j, i)->BackColor = Color::Gray;
-					tableLayoutPanel1->GetControlFromPosition(j, i)->Enabled = false;
-				}
-				else if (field[i * field_size + j + 1] == '2') {
+				else if (field[i * field_size + j + 1] == '2')
 					tableLayoutPanel1->GetControlFromPosition(j, i)->BackColor = Color::Black;
-					tableLayoutPanel1->GetControlFromPosition(j, i)->Enabled = false;
-				}
 			}
-
-		/*int field_of_play[yp][yp];
-		ii = 0;
-		for (int i = 0; i < yp; i++)
-			for (int j = 0; j < yp; j++) {
-				field_of_play[i][j] = ypm[ii];
-				ii++;
-			}*/
 	}
 	private: System::Void tableLayoutPanel1_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 		for (int i = 0; i < field_size; i++) 
 			for (int j = 0; j < field_size; j++) {
-				if ((e->X > (327 / field_size) * i && e->X < (327 / field_size) * (i + 1)) && (e->Y > (354 / field_size) * j && e->Y < (354 / field_size) * (j + 1)))
-					if (ButtonFClick == "F1" && FTurn)
-						for(int ii=0;ii<field_size;ii++)
-							for(int jj=0;jj<field_size;jj++)
-								if(jj==j)
-									tableLayoutPanel1->GetControlFromPosition(ii, jj)->BackColor = Color::Aqua;
-								else
-									tableLayoutPanel1->GetControlFromPosition(ii, jj)->BackColor = Color::White;
-					else if(ButtonFClick == "F1" && !FTurn)
-						for (int ii = 0; ii < field_size; ii++)
-							for (int jj = 0; jj < field_size; jj++)
-								if (ii == i)
-									tableLayoutPanel1->GetControlFromPosition(ii, jj)->BackColor = Color::Aqua;
-								else
-									tableLayoutPanel1->GetControlFromPosition(ii, jj)->BackColor = Color::White;
+				if ((e->X > (327 / field_size) * i && e->X < (327 / field_size) * (i + 1)) && (e->Y > (354 / field_size) * j && e->Y < (354 / field_size) * (j + 1))) {
+					if (ButtonFClick == "F1" && !FTurn) {
+						if (j > 0 && j < field_size - 2) {
+							if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::White &&
+								tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::White &&
+								tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::White &&
+								tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor == Color::White) 
+							{
+								tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor = Color::Aqua;
+								tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::Aqua;
+								tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor = Color::Aqua;
+								tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor = Color::Aqua;
+							}
+						}
+					}
+					else if (ButtonFClick == "F1" && FTurn) {
+
+					}
+				}
 			}
 	}
 	private: System::Void ButtonF1_Click(System::Object^ sender, System::EventArgs^ e) {
-		ButtonFClick = "F1"; 
-		MessageBox::Show(field, "Закрытие", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		ButtonFClick = "F1";
 	}
 	private: System::Void ButtonF2_Click(System::Object^ sender, System::EventArgs^ e) {
 		ButtonFClick = "F2";
@@ -628,13 +618,16 @@ namespace TangramTetris {
 	private: System::Void ButtonF7_2_Click(System::Object^ sender, System::EventArgs^ e) {
 		ButtonFClick = "F7";
 	}
-	private: System::Void tableLayoutPanel1_MouseDoubleClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-		if (!FTurn)
-			FTurn = true;
-		else
-			FTurn = false;
-	}
-	private: System::Void tableLayoutPanel1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void tableLayoutPanel1_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		if (e->Button == System::Windows::Forms::MouseButtons::Right) {
+
+		}
+		else {
+			if (!FTurn)
+				FTurn = true;
+			else
+				FTurn = false;
+		}
 	}
 };
 }
