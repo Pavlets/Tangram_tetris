@@ -27,6 +27,7 @@ namespace TangramTetris {
 		bool FTurn = false;
 		bool level_is_finish;
 		int rah = 0;
+		int F1Turn, F3Turn, F4Turn, F5Turn, F6Turn, F7Turn;
 	private: System::Windows::Forms::Timer^ timer1;
 	public:
 	private: System::ComponentModel::IContainer^ components;
