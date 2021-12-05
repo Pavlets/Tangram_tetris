@@ -172,6 +172,7 @@ namespace TangramTetris {
 			// 
 			this->groupBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->Controls->Add(this->F7_count);
 			this->groupBox1->Controls->Add(this->F4_count);
 			this->groupBox1->Controls->Add(this->F5_count);
@@ -512,7 +513,7 @@ namespace TangramTetris {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Constantia", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button1->ForeColor = System::Drawing::Color::Red;
-			this->button1->Location = System::Drawing::Point(775, 28);
+			this->button1->Location = System::Drawing::Point(166, 269);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(145, 56);
 			this->button1->TabIndex = 5;
@@ -527,7 +528,6 @@ namespace TangramTetris {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(932, 462);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->groupBox1);
