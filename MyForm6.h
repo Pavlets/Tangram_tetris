@@ -1289,6 +1289,7 @@ namespace TangramTetris {
 				if (count == field_size * field_size) {
 					timer1->Enabled = false;
 					MessageBox::Show("Ви пройшли рiвень! Ваш рахунок:" + rah, "Перемога!", MessageBoxButtons::OK, MessageBoxIcon::None);
+					//Дорогой Ярик, пишу тебе это письмо в 5:43, переменная rah хранит в себе счёт игрока, чем меньше счёт - тем хуже, РОВНО В ЭТОЙ СТРОЧКЕ развлекайся с этой переменной как хочешь, а я пошёл посплю, с наилучшими пожеланиями, свой Алексей.
 					this->Close();
 				}
 				count = 0;
