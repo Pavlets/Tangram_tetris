@@ -123,10 +123,10 @@
 	<data number="11">
 		<figura1> 0 </figura1>
 		<figura2> 2 </figura2>
-		<figura3> 3 </figura3>
+		<figura3> 1 </figura3>
 		<figura4> 4 </figura4>
-		<figura5> 5 </figura5>
-		<figura6> 0 </figura6>
+		<figura5> 2 </figura5>
+		<figura6> 1 </figura6>
 		<figura7> 3 </figura7>
 		<sizefield> 10 </sizefield>
 		<field> 2200000002200110010000111101100111111111011111111100011100110001010011011111111000111110022010101022 </field>
