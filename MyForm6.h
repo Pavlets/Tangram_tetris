@@ -26,12 +26,10 @@ namespace TangramTetris {
 		String^ ButtonFClick = "";
 		bool FTurn = false;
 		bool level_is_finish;
-	private: System::Windows::Forms::Label^ label1;
-	public:
-	private: System::Windows::Forms::Label^ label2;
-
-	public:
+		int rah = 0;
 	private: System::Windows::Forms::Timer^ timer1;
+	public:
+	private: System::ComponentModel::IContainer^ components;
 	public:
 		Image^ img_back;
 		MyForm6(String^ level_name, Image^ img_back, int field_size, String^ field, int F_1,  int F_2, int F_3, int F_4, int F_5, int F_6, int F_7)
@@ -51,8 +49,13 @@ namespace TangramTetris {
 			this->F_5 = F_5;
 			this->F_6 = F_6;
 			this->F_7 = F_7;
+
+			timer1->Interval = 1000;
 		}
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+	//private: System::Windows::Forms::Timer^ timer1;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::Button^ ButtonF1;
 	private: System::Windows::Forms::Button^ ButtonF2;
@@ -81,27 +84,6 @@ namespace TangramTetris {
 
 	private: System::Windows::Forms::Label^ F2_count;
 
-	/*protected:
-		/// <summary>
-		/// ќсвободить все используемые ресурсы.
-		/// </summary>
-		~MyForm6()
-		{
-			if (components)
-			{
-				delete components;
-			}
-		//private: System::ComponentModel::IContainer^ components;
-		//protected:
-		}
-	private: System::ComponentModel::IContainer^ components;
-	protected:
-
-
-
-
-	private:		System::ComponentModel::Container^ components;*/
-
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// “ребуемый метод дл€ поддержки конструктора Ч не измен€йте 
@@ -109,6 +91,7 @@ namespace TangramTetris {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm6::typeid));
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
@@ -133,6 +116,7 @@ namespace TangramTetris {
 			this->ButtonF1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -513,6 +497,11 @@ namespace TangramTetris {
 			this->label2->TabIndex = 4;
 			this->label2->Text = L"0";
 			// 
+			// timer1
+			// 
+			this->timer1->Enabled = true;
+			this->timer1->Tick += gcnew System::EventHandler(this, &MyForm6::timer1_Tick);
+			// 
 			// MyForm6
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -539,7 +528,6 @@ namespace TangramTetris {
 		}
 #pragma endregion
 	private: System::Void MyForm6_Load(System::Object^ sender, System::EventArgs^ e) {
-		//timer1->Interval = 500;
 		this->Text = level_name;
 		this->BackgroundImage = img_back;
 		F1_count->Text = "X" + F_1;
@@ -895,7 +883,8 @@ namespace TangramTetris {
 						if (tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor == Cursors::Default)
 							count++;
 				if (count == field_size * field_size) {
-					MessageBox::Show("¬и пройшли рiвень! ¬аш рахунок:" + count, "ѕеремога!", MessageBoxButtons::OK, MessageBoxIcon::None);
+					timer1->Enabled = false;
+					MessageBox::Show("¬и пройшли рiвень! ¬аш рахунок:" + rah, "ѕеремога!", MessageBoxButtons::OK, MessageBoxIcon::None);
 					this->Close();
 				}
 				count = 0;
@@ -942,6 +931,10 @@ namespace TangramTetris {
 	}
 	private: System::Void ButtonF7_2_Click(System::Object^ sender, System::EventArgs^ e) {
 		ButtonFClick = "F7";
+	}
+	private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
+		rah += 10;
+		label2->Text = rah.ToString();
 	}
 };
 }
