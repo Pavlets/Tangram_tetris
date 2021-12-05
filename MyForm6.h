@@ -827,15 +827,15 @@ namespace TangramTetris {
 							}
 							else if (F6Turn == 1) {
 								if (i > 0 && j < field_size - 1 && i < field_size - 1) {
-									if (tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::White &&
+									if (tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::White &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::White &&
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::White &&
-										tableLayoutPanel1->GetControlFromPosition(i - 1, j + 1)->BackColor == Color::White)
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->BackColor == Color::White)
 									{
-										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor = Color::PaleVioletRed;
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor = Color::PaleVioletRed;
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor = Color::PaleVioletRed;
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor = Color::PaleVioletRed;
-										tableLayoutPanel1->GetControlFromPosition(i - 1, j + 1)->BackColor = Color::PaleVioletRed;
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->BackColor = Color::PaleVioletRed;
 									}
 								}
 							}
@@ -1185,15 +1185,15 @@ namespace TangramTetris {
 							}
 							else if (F6Turn == 1) {
 								if (i > 0 && j < field_size - 1 && i < field_size - 1)
-									if (tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::PaleVioletRed &&
+									if (tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::PaleVioletRed &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::PaleVioletRed &&
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::PaleVioletRed &&
-										tableLayoutPanel1->GetControlFromPosition(i - 1, j + 1)->BackColor == Color::PaleVioletRed)
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->BackColor == Color::PaleVioletRed)
 									{
-										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor = Cursors::Default;
-										tableLayoutPanel1->GetControlFromPosition(i - 1, j + 1)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->Cursor = Cursors::Default;
 										placed = true;
 									}
 							}
