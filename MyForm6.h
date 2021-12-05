@@ -742,29 +742,44 @@ namespace TangramTetris {
 			}
 	}
 	private: System::Void tableLayoutPanel1_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		bool placed = false;
 		if (e->Button == System::Windows::Forms::MouseButtons::Left) {
 			for (int i = 0; i < field_size; i++)
 				for (int j = 0; j < field_size; j++) {
 					if ((e->X > (327 / field_size) * i && e->X < (327 / field_size) * (i + 1)) && (e->Y > (354 / field_size) * j && e->Y < (354 / field_size) * (j + 1))) {
-						if (ButtonFClick == "F1" && !FTurn) {
-							if (j > 0 && j < field_size - 2) {
-								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::Aqua &&
-									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Aqua &&
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::Aqua &&
-									tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor == Color::Aqua)
-								{
-									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i, j + 2)->Cursor = Cursors::Default;
+						if (ButtonFClick == "F1") {
+							if (!FTurn) {
+								if (j > 0 && j < field_size - 2)
+									if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::Aqua &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Aqua &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::Aqua &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor == Color::Aqua)
+									{
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j + 2)->Cursor = Cursors::Default;
+										placed = true;
+									}
+							}
+							else if (FTurn) {
+
+							}
+							if (placed) {
+								F_1--;
+								F1_count->Text = "X" + F_1;
+								if (F_1 == 0) {
+									ButtonF1->Enabled = false;
+									ButtonF1->BackgroundImage = Image::FromFile("Pictures/F1_b.png");
+									ButtonFClick = "";
 								}
 							}
 						}
-						else if (ButtonFClick == "F1" && FTurn) {
 
-						}
-						if (ButtonFClick == "F2" && !FTurn) {
-							if (j > 0 && i > 0) {
+
+
+						if (ButtonFClick == "F2") {
+							if (j > 0 && i > 0)
 								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::Yellow &&
 									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Yellow &&
 									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::Yellow &&
@@ -774,107 +789,181 @@ namespace TangramTetris {
 									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
 									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
 									tableLayoutPanel1->GetControlFromPosition(i - 1, j - 1)->Cursor = Cursors::Default;
+									placed = true;
+								}
+							if (placed) {
+								F_2--;
+								F2_count->Text = "X" + F_2;
+								if (F_2 == 0) {
+									ButtonF2->Enabled = false;
+									ButtonF2->BackgroundImage = Image::FromFile("Pictures/F2_b.png");
+									ButtonFClick = "";
 								}
 							}
 						}
-						else if (ButtonFClick == "F2" && FTurn) {
-							if (j > 0 && i > 0) {
-								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::Yellow &&
-									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Yellow &&
-									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::Yellow &&
-									tableLayoutPanel1->GetControlFromPosition(i - 1, j - 1)->BackColor == Color::Yellow)
-								{
-									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i - 1, j - 1)->Cursor = Cursors::Default;
-								}
-							}
-						}
-						if (ButtonFClick == "F3" && !FTurn) {
-							if (j > 1 && i < field_size - 1) {
-								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::Orange &&
-									tableLayoutPanel1->GetControlFromPosition(i, j - 2)->BackColor == Color::Orange &&
-									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Orange &&
-									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::Orange)
-								{
-									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i, j - 2)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
-								}
-							}
-						}
-						else if (ButtonFClick == "F3" && FTurn) {
 
-						}
-						if (ButtonFClick == "F4" && !FTurn) {
-							if (j > 1 && i > 0) {
-								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::BlueViolet &&
-									tableLayoutPanel1->GetControlFromPosition(i, j - 2)->BackColor == Color::BlueViolet &&
-									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::BlueViolet &&
-									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::BlueViolet)
-								{
-									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i, j - 2)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
+
+
+						if (ButtonFClick == "F3") {
+							if (!FTurn) {
+								if (j > 1 && i < field_size - 1)
+									if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::Orange &&
+										tableLayoutPanel1->GetControlFromPosition(i, j - 2)->BackColor == Color::Orange &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Orange &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::Orange)
+									{
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j - 2)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
+										placed = true;
+									}
+							}
+							else if (ButtonFClick == "F3" && FTurn) {
+
+							}
+							if (placed) {
+								F_3--;
+								F3_count->Text = "X" + F_3;
+								if (F_3 == 0) {
+									ButtonF3_1->Enabled = false;
+									ButtonF3_1->BackgroundImage = Image::FromFile("Pictures/F3.1_b.png");
+									ButtonF3_2->Enabled = false;
+									ButtonF3_2->BackgroundImage = Image::FromFile("Pictures/F3.2_b.png");
+									ButtonFClick = "";
 								}
 							}
 						}
-						else if (ButtonFClick == "F4" && FTurn) {
 
-						}
-						if (ButtonFClick == "F5" && !FTurn) {
-							if (j > 0 && j < field_size - 1 && i < field_size - 1) {
-								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::LawnGreen &&
-									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::LawnGreen &&
-									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::LawnGreen &&
-									tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->BackColor == Color::LawnGreen)
-								{
-									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->Cursor = Cursors::Default;
+
+
+						if (ButtonFClick == "F4") {
+							if (!FTurn) {
+								if (j > 1 && i > 0)
+									if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::BlueViolet &&
+										tableLayoutPanel1->GetControlFromPosition(i, j - 2)->BackColor == Color::BlueViolet &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::BlueViolet &&
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::BlueViolet)
+									{
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j - 2)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
+										placed = true;
+									}
+							}
+							else if (ButtonFClick == "F4" && FTurn) {
+
+							}
+							if (placed) {
+								F_4--;
+								F4_count->Text = "X" + F_4;
+								if (F_4 == 0) {
+									ButtonF4_1->Enabled = false;
+									ButtonF4_1->BackgroundImage = Image::FromFile("Pictures/F4.1_b.png");
+									ButtonF4_2->Enabled = false;
+									ButtonF4_2->BackgroundImage = Image::FromFile("Pictures/F4.2_b.png");
+									ButtonFClick = "";
 								}
 							}
 						}
-						else if (ButtonFClick == "F5" && FTurn) {
 
-						}
-						if (ButtonFClick == "F6" && !FTurn) {
-							if (j > 0 && j < field_size - 1 && i < field_size - 1) {
-								if (tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::PaleVioletRed &&
-									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::PaleVioletRed &&
-									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::PaleVioletRed &&
-									tableLayoutPanel1->GetControlFromPosition(i + 1, j - 1)->BackColor == Color::PaleVioletRed)
-								{
-									tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i + 1, j - 1)->Cursor = Cursors::Default;
+
+
+						if (ButtonFClick == "F5") {
+							if (!FTurn) {
+								if (j > 0 && j < field_size - 1 && i < field_size - 1)
+									if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::LawnGreen &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::LawnGreen &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::LawnGreen &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->BackColor == Color::LawnGreen)
+									{
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->Cursor = Cursors::Default;
+										placed = true;
+									}
+							}
+							else if (ButtonFClick == "F5" && FTurn) {
+
+							}
+							if (placed) {
+								F_5--;
+								F5_count->Text = "X" + F_5;
+								if (F_5 == 0) {
+									ButtonF5_1->Enabled = false;
+									ButtonF5_1->BackgroundImage = Image::FromFile("Pictures/F5.1_b.png");
+									ButtonF5_2->Enabled = false;
+									ButtonF5_2->BackgroundImage = Image::FromFile("Pictures/F5.2_b.png");
+									ButtonFClick = "";
 								}
 							}
 						}
-						else if (ButtonFClick == "F6" && FTurn) {
 
-						}
-						if (ButtonFClick == "F7" && !FTurn) {
-							if (i > 0 && i < field_size - 1 && j > 0) {
-								if (tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::HotPink &&
-									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::HotPink &&
-									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::HotPink &&
-									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::HotPink)
-								{
-									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
-									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
+
+
+						if (ButtonFClick == "F6") {
+							if (!FTurn) {
+								if (j > 0 && j < field_size - 1 && i < field_size - 1)
+									if (tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::PaleVioletRed &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::PaleVioletRed &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::PaleVioletRed &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j - 1)->BackColor == Color::PaleVioletRed)
+									{
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j - 1)->Cursor = Cursors::Default;
+										placed = true;
+									}
+							}
+							else if (ButtonFClick == "F6" && FTurn) {
+
+							}
+							if (placed) {
+								F_6--;
+								F6_count->Text = "X" + F_6;
+								if (F_6 == 0) {
+									ButtonF6_1->Enabled = false;
+									ButtonF6_1->BackgroundImage = Image::FromFile("Pictures/F6.1_b.png");
+									ButtonF6_2->Enabled = false;
+									ButtonF6_2->BackgroundImage = Image::FromFile("Pictures/F6.2_b.png");
+									ButtonFClick = "";
 								}
 							}
 						}
-						else if (ButtonFClick == "F7" && FTurn) {
 
+
+						if (ButtonFClick == "F7") {
+							if (!FTurn) {
+								if (i > 0 && i < field_size - 1 && j > 0)
+									if (tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::HotPink &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::HotPink &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::HotPink &&
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::HotPink)
+									{
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
+										placed = true;
+									}
+							}
+							else if (ButtonFClick == "F7" && FTurn) {
+
+							}
+							if (placed) {
+								F_7--;
+								F7_count->Text = "X" + F_7;
+								if (F_7 == 0) {
+									ButtonF7_1->Enabled = false;
+									ButtonF7_1->BackgroundImage = Image::FromFile("Pictures/F7.1_b.png");
+									ButtonF7_2->Enabled = false;
+									ButtonF7_2->BackgroundImage = Image::FromFile("Pictures/F7.2_b.png");
+									ButtonFClick = "";
+								}
+							}
 						}
 					}
 				}
