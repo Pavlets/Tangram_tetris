@@ -20,6 +20,7 @@ namespace TangramTetris {
 		int i_it = -1, j_it = -1;
 		int count = 0;
 		int F_1, F_2, F_3, F_4, F_5, F_6, F_7;
+		int stF_1, stF_2, stF_3, stF_4, stF_5, stF_6, stF_7;
 		int field_size;
 		String^ level_name;
 		String^ field;
@@ -30,6 +31,7 @@ namespace TangramTetris {
 	private: System::Windows::Forms::Timer^ timer1;
 	public:
 	private: System::ComponentModel::IContainer^ components;
+	private: System::Windows::Forms::Button^ button1;
 	public:
 		Image^ img_back;
 		MyForm6(String^ level_name, Image^ img_back, int field_size, String^ field, int F_1,  int F_2, int F_3, int F_4, int F_5, int F_6, int F_7)
@@ -42,13 +44,13 @@ namespace TangramTetris {
 			this->img_back = img_back;
 			this->field_size = field_size;
 			this->field = field;
-			this->F_1 = F_1;
-			this->F_2 = F_2;
-			this->F_3 = F_3;
-			this->F_4 = F_4;
-			this->F_5 = F_5;
-			this->F_6 = F_6;
-			this->F_7 = F_7;
+			this->stF_1 = this->F_1 = F_1;
+			this->stF_2 = this->F_2 = F_2;
+			this->stF_3 = this->F_3 = F_3;
+			this->stF_4 = this->F_4 = F_4;
+			this->stF_5 = this->F_5 = F_5;
+			this->stF_6 = this->F_6 = F_6;
+			this->stF_7 = this->F_7 = F_7;
 
 			timer1->Interval = 1000;
 		}
@@ -117,6 +119,7 @@ namespace TangramTetris {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -502,6 +505,21 @@ namespace TangramTetris {
 			this->timer1->Enabled = true;
 			this->timer1->Tick += gcnew System::EventHandler(this, &MyForm6::timer1_Tick);
 			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::Transparent;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Constantia", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button1->ForeColor = System::Drawing::Color::Red;
+			this->button1->Location = System::Drawing::Point(775, 28);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(145, 56);
+			this->button1->TabIndex = 5;
+			this->button1->Text = L"Рестарт";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm6::button1_Click);
+			// 
 			// MyForm6
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -509,6 +527,7 @@ namespace TangramTetris {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(932, 462);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->groupBox1);
@@ -1021,10 +1040,10 @@ namespace TangramTetris {
 										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor != Cursors::Default)
 									{
-										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor != Cursors::Default;
-										tableLayoutPanel1->GetControlFromPosition(i + 2, j)->Cursor != Cursors::Default;
-										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default;
-										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor != Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i + 2, j)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor = Cursors::Default;
 										placed = true;
 									}
 							}
@@ -1443,5 +1462,108 @@ namespace TangramTetris {
 		rah += 10;
 		label2->Text = rah.ToString();
 	}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	F_1 = stF_1;
+	F_2 = stF_2;
+	F_3 = stF_3;
+	F_4 = stF_4;
+	F_5 = stF_5;
+	F_6 = stF_6;
+	F_7 = stF_7;
+	F1_count->Text = "X" + F_1;
+	if (F_1 == 0) {
+		ButtonF1->Enabled = false;
+		ButtonF1->BackgroundImage = Image::FromFile("Pictures/F1_b.png");
+	}
+	else {
+		ButtonF1->Enabled = true;
+		ButtonF1->BackgroundImage = Image::FromFile("Pictures/F1.png");
+	}
+	F2_count->Text = "X" + F_2;
+	if (F_2 == 0) {
+		ButtonF2->Enabled = false;
+		ButtonF2->BackgroundImage = Image::FromFile("Pictures/F2_b.png");
+	}
+	else {
+		ButtonF2->Enabled = true;
+		ButtonF2->BackgroundImage = Image::FromFile("Pictures/F2.png");
+	}
+	F3_count->Text = "X" + F_3;
+	if (F_3 == 0) {
+		ButtonF3_1->Enabled = false;
+		ButtonF3_1->BackgroundImage = Image::FromFile("Pictures/F3.1_b.png");
+		ButtonF3_2->Enabled = false;
+		ButtonF3_2->BackgroundImage = Image::FromFile("Pictures/F3.2_b.png");
+	}
+	else {
+		ButtonF3_1->Enabled = true;
+		ButtonF3_2->Enabled = true;
+		ButtonF3_1->BackgroundImage = Image::FromFile("Pictures/F3.1.png");
+		ButtonF3_2->BackgroundImage = Image::FromFile("Pictures/F3.2.png");
+	}
+	F4_count->Text = "X" + F_4;
+	if (F_4 == 0) {
+		ButtonF4_1->Enabled = false;
+		ButtonF4_1->BackgroundImage = Image::FromFile("Pictures/F4.1_b.png");
+		ButtonF4_2->Enabled = false;
+		ButtonF4_2->BackgroundImage = Image::FromFile("Pictures/F4.2_b.png");
+	}
+	else {
+		ButtonF4_1->Enabled = true;
+		ButtonF4_2->Enabled = true;
+		ButtonF4_1->BackgroundImage = Image::FromFile("Pictures/F4.1.png");
+		ButtonF4_2->BackgroundImage = Image::FromFile("Pictures/F4.2.png");
+	}
+	F5_count->Text = "X" + F_5;
+	if (F_5 == 0) {
+		ButtonF5_1->Enabled = false;
+		ButtonF5_1->BackgroundImage = Image::FromFile("Pictures/F5.1_b.png");
+		ButtonF5_2->Enabled = false;
+		ButtonF5_2->BackgroundImage = Image::FromFile("Pictures/F5.2_b.png");
+	}
+	else {
+		ButtonF5_1->Enabled = true;
+		ButtonF5_2->Enabled = true;
+		ButtonF5_1->BackgroundImage = Image::FromFile("Pictures/F5.1.png");
+		ButtonF5_2->BackgroundImage = Image::FromFile("Pictures/F5.2.png");
+	}
+	F6_count->Text = "X" + F_6;
+	if (F_6 == 0) {
+		ButtonF6_1->Enabled = false;
+		ButtonF6_1->BackgroundImage = Image::FromFile("Pictures/F6.1_b.png");
+		ButtonF6_2->Enabled = false;
+		ButtonF6_2->BackgroundImage = Image::FromFile("Pictures/F6.2_b.png");
+	}
+	else {
+		ButtonF6_1->Enabled = true;
+		ButtonF6_2->Enabled = true;
+		ButtonF6_1->BackgroundImage = Image::FromFile("Pictures/F6.1.png");
+		ButtonF6_2->BackgroundImage = Image::FromFile("Pictures/F6.2.png");
+	}
+	F7_count->Text = "X" + F_7;
+	if (F_7 == 0) {
+		ButtonF7_1->Enabled = false;
+		ButtonF7_1->BackgroundImage = Image::FromFile("Pictures/F7.1_b.png");
+		ButtonF7_2->Enabled = false;
+		ButtonF7_2->BackgroundImage = Image::FromFile("Pictures/F7.2_b.png");
+	}
+	else {
+		ButtonF7_1->Enabled = true;
+		ButtonF7_2->Enabled = true;
+		ButtonF7_1->BackgroundImage = Image::FromFile("Pictures/F7.1.png");
+		ButtonF7_2->BackgroundImage = Image::FromFile("Pictures/F7.2.png");
+	}
+	for (int i = 0; i < field_size; i++)
+		for (int j = 0; j < field_size; j++) {
+			if (field[i * field_size + j + 1] == '1') {
+				tableLayoutPanel1->GetControlFromPosition(j, i)->BackColor = Color::White;
+				tableLayoutPanel1->GetControlFromPosition(j, i)->Cursor = Cursors::Cross;
+			}
+			else if (field[i * field_size + j + 1] == '0')
+				tableLayoutPanel1->GetControlFromPosition(j, i)->BackColor = Color::Gray;
+			else if (field[i * field_size + j + 1] == '2')
+				tableLayoutPanel1->GetControlFromPosition(j, i)->BackColor = Color::Black;
+		}
+}
 };
 }
