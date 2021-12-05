@@ -917,7 +917,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::Aqua &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Aqua &&
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::Aqua &&
-										tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor == Color::Aqua)
+										tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor == Color::Aqua &&
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 2)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
@@ -931,7 +935,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::Aqua &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Aqua &&
 										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::Aqua &&
-										tableLayoutPanel1->GetControlFromPosition(i + 2, j)->BackColor == Color::Aqua)
+										tableLayoutPanel1->GetControlFromPosition(i + 2, j)->BackColor == Color::Aqua &&
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i + 2, j)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
@@ -958,7 +966,11 @@ namespace TangramTetris {
 								if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::Yellow &&
 									tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Yellow &&
 									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::Yellow &&
-									tableLayoutPanel1->GetControlFromPosition(i - 1, j - 1)->BackColor == Color::Yellow)
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j - 1)->BackColor == Color::Yellow &&
+									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor != Cursors::Default &&
+									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor != Cursors::Default &&
+									tableLayoutPanel1->GetControlFromPosition(i - 1, j - 1)->Cursor != Cursors::Default)
 								{
 									tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
 									tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
@@ -985,7 +997,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::Orange &&
 										tableLayoutPanel1->GetControlFromPosition(i, j - 2)->BackColor == Color::Orange &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Orange &&
-										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::Orange)
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::Orange &&
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j - 2)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i, j - 2)->Cursor = Cursors::Default;
@@ -999,12 +1015,16 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::Orange &&
 										tableLayoutPanel1->GetControlFromPosition(i + 2, j)->BackColor == Color::Orange &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Orange &&
-										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::Orange)
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::Orange &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i + 2, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor != Cursors::Default)
 									{
-										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
-										tableLayoutPanel1->GetControlFromPosition(i + 2, j)->Cursor = Cursors::Default;
-										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
-										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor = Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor != Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i + 2, j)->Cursor != Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default;
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor != Cursors::Default;
 										placed = true;
 									}
 							}
@@ -1013,7 +1033,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::Orange &&
 										tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor == Color::Orange &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Orange &&
-										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::Orange)
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::Orange &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 2)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i, j + 2)->Cursor = Cursors::Default;
@@ -1027,7 +1051,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::Orange &&
 										tableLayoutPanel1->GetControlFromPosition(i - 2, j)->BackColor == Color::Orange &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::Orange &&
-										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::Orange)
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::Orange &&
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i - 2, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i - 2, j)->Cursor = Cursors::Default;
@@ -1057,7 +1085,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::BlueViolet &&
 										tableLayoutPanel1->GetControlFromPosition(i, j - 2)->BackColor == Color::BlueViolet &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::BlueViolet &&
-										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::BlueViolet)
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::BlueViolet &&
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j - 2)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i, j - 2)->Cursor = Cursors::Default;
@@ -1071,7 +1103,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::BlueViolet &&
 										tableLayoutPanel1->GetControlFromPosition(i + 2, j)->BackColor == Color::BlueViolet &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::BlueViolet &&
-										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::BlueViolet)
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::BlueViolet &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i + 2, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i + 2, j)->Cursor = Cursors::Default;
@@ -1085,7 +1121,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::BlueViolet &&
 										tableLayoutPanel1->GetControlFromPosition(i, j + 2)->BackColor == Color::BlueViolet &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::BlueViolet &&
-										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::BlueViolet)
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::BlueViolet &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 2)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i, j + 2)->Cursor = Cursors::Default;
@@ -1099,7 +1139,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::BlueViolet &&
 										tableLayoutPanel1->GetControlFromPosition(i - 2, j)->BackColor == Color::BlueViolet &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::BlueViolet &&
-										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::BlueViolet)
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::BlueViolet &&
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i - 2, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i - 2, j)->Cursor = Cursors::Default;
@@ -1130,7 +1174,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::LawnGreen &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::LawnGreen &&
 										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::LawnGreen &&
-										tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->BackColor == Color::LawnGreen)
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->BackColor == Color::LawnGreen &&
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
@@ -1144,7 +1192,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::LawnGreen &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::LawnGreen &&
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::LawnGreen &&
-										tableLayoutPanel1->GetControlFromPosition(i - 1, j + 1)->BackColor == Color::LawnGreen)
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j + 1)->BackColor == Color::LawnGreen &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j + 1)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
@@ -1174,7 +1226,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::PaleVioletRed &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::PaleVioletRed &&
 										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::PaleVioletRed &&
-										tableLayoutPanel1->GetControlFromPosition(i + 1, j - 1)->BackColor == Color::PaleVioletRed)
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j - 1)->BackColor == Color::PaleVioletRed &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j - 1)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
@@ -1188,7 +1244,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::PaleVioletRed &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::PaleVioletRed &&
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::PaleVioletRed &&
-										tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->BackColor == Color::PaleVioletRed)
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->BackColor == Color::PaleVioletRed &&
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j + 1)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor = Cursors::Default;
@@ -1217,7 +1277,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::HotPink &&
 										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::HotPink &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::HotPink &&
-										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::HotPink)
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::HotPink &&
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
@@ -1231,7 +1295,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::HotPink &&
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::HotPink &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::HotPink &&
-										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::HotPink)
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::HotPink &&
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor = Cursors::Default;
@@ -1245,7 +1313,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::HotPink &&
 										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->BackColor == Color::HotPink &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::HotPink &&
-										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::HotPink)
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::HotPink &&
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i + 1, j)->Cursor = Cursors::Default;
@@ -1259,7 +1331,11 @@ namespace TangramTetris {
 									if (tableLayoutPanel1->GetControlFromPosition(i, j - 1)->BackColor == Color::HotPink &&
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->BackColor == Color::HotPink &&
 										tableLayoutPanel1->GetControlFromPosition(i, j)->BackColor == Color::HotPink &&
-										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::HotPink)
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->BackColor == Color::HotPink &&
+										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i, j)->Cursor != Cursors::Default &&
+										tableLayoutPanel1->GetControlFromPosition(i - 1, j)->Cursor != Cursors::Default)
 									{
 										tableLayoutPanel1->GetControlFromPosition(i, j - 1)->Cursor = Cursors::Default;
 										tableLayoutPanel1->GetControlFromPosition(i, j + 1)->Cursor = Cursors::Default;
