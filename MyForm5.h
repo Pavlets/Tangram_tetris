@@ -37,6 +37,8 @@ namespace TangramTetris {
 		}
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::ListBox^ listBox1;
 	protected:
 
 	private:
@@ -55,6 +57,8 @@ namespace TangramTetris {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm5::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -80,11 +84,38 @@ namespace TangramTetris {
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Таблиця Рекордів";
 			// 
+			// comboBox1
+			// 
+			this->comboBox1->ForeColor = System::Drawing::SystemColors::InfoText;
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+				L"Рівень 1 - легкий", L"Рівень 2 - легкий", L"Рівень 3 - легкий",
+					L"Рівень 4 - легкий", L"Рівень 5 - легкий", L"Рівень 1 - нормальний", L"Рівень 2 - нормальний", L"Рівень 3 - нормальний", L"Рівень 4 - нормальний",
+					L"Рівень 5 - нормальний", L"Босс рівень"
+			});
+			this->comboBox1->Location = System::Drawing::Point(123, 79);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(121, 21);
+			this->comboBox1->TabIndex = 2;
+			// 
+			// listBox1
+			// 
+			this->listBox1->BackColor = System::Drawing::Color::Black;
+			this->listBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->listBox1->ForeColor = System::Drawing::SystemColors::HighlightText;
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->Location = System::Drawing::Point(123, 121);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(246, 301);
+			this->listBox1->TabIndex = 3;
+			// 
 			// MyForm5
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(497, 556);
+			this->Controls->Add(this->listBox1);
+			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
