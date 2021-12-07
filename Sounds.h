@@ -9,13 +9,13 @@ private:
 			System::Media::SoundPlayer^ player = gcnew System::Media::SoundPlayer();
 			player->SoundLocation = "Wind.wav";
 			player->Load();
-			player->Play();
+			player->PlayLooping();
 		}
 		void menustart() {
 			System::Media::SoundPlayer^ player = gcnew System::Media::SoundPlayer();
 			player->SoundLocation = "MenuStart.wav";
 			player->Load();
-			player->Play();
+			player->PlayLooping();
 		}
 		void menuin() {
 			pl->URL = "MoveB.wav";
