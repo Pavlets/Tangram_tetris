@@ -579,6 +579,7 @@ private: System::Void button12_MouseEnter(System::Object^ sender, System::EventA
 	sd.menuin();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	//weew
 	Level = 1;
 	Image^ img_back = Image::FromFile("Pictures/B1.png");
 	GetData obj;
