@@ -10,7 +10,7 @@
 		<figura7> 0 </figura7>
 		<sizefield> 4 </sizefield>
 		<field> 1111111111110000 </field>
-		<namelevel> Light Level 1 </namelevel>
+		<namelevel>Light Level 1</namelevel>
 	</data>
 	<data number="2">
 		<figura1> 1 </figura1>
@@ -22,7 +22,7 @@
 		<figura7> 0 </figura7>
 		<sizefield> 4 </sizefield>
 		<field> 1111111111111111 </field>
-		<namelevel> Light Level 2 </namelevel>
+		<namelevel>Light Level 2</namelevel>
 	</data>
 	<data number="3">
 		<figura1> 0 </figura1>
@@ -34,7 +34,7 @@
 		<figura7> 2 </figura7>
 		<sizefield> 4 </sizefield>
 		<field> 1111111111110000 </field>
-		<namelevel> Light Level 3 </namelevel>
+		<namelevel>Light Level 3</namelevel>
 	</data>
 	<data number="4">
 		<figura1> 0 </figura1>
@@ -46,7 +46,7 @@
 		<figura7> 2 </figura7>
 		<sizefield> 4 </sizefield>
 		<field> 1111111111111111 </field>
-		<namelevel> Light Level 4 </namelevel>
+		<namelevel>Light Level 4</namelevel>
 	</data>
 	<data number="5">
 		<figura1> 0 </figura1>
@@ -58,7 +58,7 @@
 		<figura7> 0 </figura7>
 		<sizefield> 4 </sizefield>
 		<field> 1111111111111111 </field>
-		<namelevel> Light Level 5 </namelevel>
+		<namelevel>Light Level 5</namelevel>
 	</data>
 	<data number="6">
 		<figura1> 0 </figura1>
@@ -70,7 +70,7 @@
 		<figura7> 0 </figura7>
 		<sizefield> 6 </sizefield>
 		<field> 000111000111000011110011111111111111 </field>
-		<namelevel> Average Level 1 </namelevel>
+		<namelevel>Average Level 1</namelevel>
 	</data>
 	<data number="7">
 		<figura1> 1 </figura1>
@@ -82,7 +82,7 @@
 		<figura7> 0 </figura7>
 		<sizefield> 8 </sizefield>
 		<field> 0000000011100111111001111110011111100111111111110000000000000000 </field>
-		<namelevel> Average Level 2 </namelevel>
+		<namelevel>Average Level 2</namelevel>
 	</data>
 	<data number="8">
 		<figura1> 0 </figura1>
@@ -94,7 +94,7 @@
 		<figura7> 1 </figura7>
 		<sizefield> 6 </sizefield>
 		<field> 111111111111111111111110010000000000 </field>
-		<namelevel> Average Level 3 </namelevel>
+		<namelevel>Average Level 3</namelevel>
 	</data>
 	<data number="9">
 		<figura1> 0 </figura1>
@@ -106,7 +106,7 @@
 		<figura7> 2 </figura7>
 		<sizefield> 6 </sizefield>
 		<field> 001100011100011100111110111110100100 </field>
-		<namelevel> Average Level 4 </namelevel>
+		<namelevel>Average Level 4</namelevel>
 	</data>
 	<data number="10">
 		<figura1> 0 </figura1>
@@ -118,7 +118,7 @@
 		<figura7> 2 </figura7>
 		<sizefield> 7 </sizefield>
 		<field> 0000000000000001110001111100011110001111101111111 </field>
-		<namelevel> Average Level 5 </namelevel>
+		<namelevel>Average Level 5</namelevel>
 	</data>
 	<data number="11">
 		<figura1> 0 </figura1>
@@ -130,6 +130,6 @@
 		<figura7> 3 </figura7>
 		<sizefield> 10 </sizefield>
 		<field> 2200000002200110010000111101100111111111011111111100011100110001010011011111111000111110022010101022 </field>
-		<namelevel> Final Level </namelevel>
+		<namelevel>Final Level</namelevel>
 	</data>
 </alldata>

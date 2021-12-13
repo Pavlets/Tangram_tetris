@@ -10,10 +10,41 @@ namespace TangramTetris {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::IO;
 
 	/// <summary>
 	/// Сводка для MyForm6
 	/// </summary>
+	
+	/*void Write_Record(String^ User_Name, String^ Level_Name, int Rah)
+	{
+		bool First_Record;
+		/*ifstream checker("records.csv");
+		if (checker.is_open()) {
+			First_Record = false;
+		}
+		else {
+			First_Record = true;
+		}
+		checker.close();*/
+		/*StreamReader^ stream = File::OpenText("records.csv");
+		if (stream) {
+			First_Record = false;
+		}
+		else {
+			First_Record = true;
+		}
+
+		//ofstream writer("records.csv", ios_base::app);
+		String^ Data = User_Name + ", " + Level_Name + ", " + Rah.ToString();
+		if(First_Record = true) {
+			File::AppendAllText("records.csv", Data);
+		}
+		else {
+			File::AppendAllText("records.csv", + '\n' + Data);
+		}
+	}*/
+	
 	public ref class MyForm6 : public System::Windows::Forms::Form
 	{
 	public:
@@ -28,13 +59,45 @@ namespace TangramTetris {
 		bool level_is_finish;
 		int rah = 0;
 		int F1Turn = 0, F3Turn = 0, F4Turn = 0, F5Turn = 0, F6Turn = 0, F7Turn = 0;
+		String^ User_Name;
 	private: System::Windows::Forms::Timer^ timer1;
 	public:
 	private: System::ComponentModel::IContainer^ components;
 	private: System::Windows::Forms::Button^ button1;
 	public:
 		Image^ img_back;
-		MyForm6(String^ level_name, Image^ img_back, int field_size, String^ field, int F_1,  int F_2, int F_3, int F_4, int F_5, int F_6, int F_7)
+
+		void Write_Record(String^ User_Name, String^ Level_Name, int Rah)
+		{
+			bool First_Record = true;
+			/*ifstream checker("records.csv");
+			if (checker.is_open()) {
+				First_Record = false;
+			}
+			else {
+				First_Record = true;
+			}
+			checker.close();*/
+			/*StreamReader^ checker = File::OpenText("records.csv");
+			if (checker) {
+				//First_Record = false;
+				First_Record = true;
+			}
+			else {
+				//First_Record = true;
+			}
+			checker->Close();
+			*/
+			String^ Data = User_Name + "," + Level_Name + "," + Rah.ToString();
+			if (First_Record = true) {
+				File::AppendAllText("records.csv", Data + "\n");
+			}
+			else {
+				File::AppendAllText("records.csv", +'\n' + Data);
+			}
+		}
+
+		MyForm6(String^ User_Name, String^ level_name, Image^ img_back, int field_size, String^ field, int F_1,  int F_2, int F_3, int F_4, int F_5, int F_6, int F_7)
 		{
 			InitializeComponent();
 			this->CenterToScreen();
@@ -51,9 +114,11 @@ namespace TangramTetris {
 			this->stF_5 = this->F_5 = F_5;
 			this->stF_6 = this->F_6 = F_6;
 			this->stF_7 = this->F_7 = F_7;
+			this->User_Name = User_Name;
 
 			timer1->Interval = 1000;
 		}
+
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
@@ -1384,7 +1449,7 @@ namespace TangramTetris {
 				if (count == field_size * field_size) {
 					timer1->Enabled = false;
 					MessageBox::Show("Ви пройшли рiвень! Ваш рахунок:" + rah, "Перемога!", MessageBoxButtons::OK, MessageBoxIcon::None);
-					//Дорогой Ярик, пишу тебе это письмо в 5:43, переменная rah хранит в себе счёт игрока, чем меньше счёт - тем хуже, РОВНО В ЭТОЙ СТРОЧКЕ развлекайся с этой переменной как хочешь, а я пошёл посплю, с наилучшими пожеланиями, свой Алексей.
+					Write_Record(User_Name, level_name, rah);
 					this->Close();
 				}
 				count = 0;

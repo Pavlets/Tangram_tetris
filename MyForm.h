@@ -46,6 +46,9 @@ namespace TangramTetris {
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 	private:
+
+		String^ User_Name;
+
 		/// <summary>
 		/// Обязательная переменная конструктора.
 		/// </summary>
@@ -73,17 +76,19 @@ namespace TangramTetris {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label1->Location = System::Drawing::Point(35, 9);
+			this->label1->Location = System::Drawing::Point(47, 11);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(199, 20);
+			this->label1->Size = System::Drawing::Size(244, 25);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Введіть ім\'я користувача";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(12, 32);
+			this->textBox1->Location = System::Drawing::Point(16, 39);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(242, 20);
+			this->textBox1->Size = System::Drawing::Size(321, 22);
 			this->textBox1->TabIndex = 1;
 			// 
 			// button1
@@ -91,9 +96,10 @@ namespace TangramTetris {
 			this->button1->BackColor = System::Drawing::Color::Transparent;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->button1->Location = System::Drawing::Point(94, 58);
+			this->button1->Location = System::Drawing::Point(125, 71);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(100, 28);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Ввійти";
 			this->button1->UseVisualStyleBackColor = false;
@@ -104,23 +110,26 @@ namespace TangramTetris {
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(-1, -1);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(267, 97);
+			this->pictureBox1->Size = System::Drawing::Size(356, 119);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 3;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &MyForm::pictureBox1_Click);
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(266, 94);
+			this->ClientSize = System::Drawing::Size(355, 116);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->MaximizeBox = false;
 			this->Name = L"MyForm";
 			this->Text = L"Tangram Tetris";
@@ -133,9 +142,17 @@ namespace TangramTetris {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		MyForm1^ Menu = gcnew MyForm1();
+		if(textBox1->Text != "") {
+			User_Name = textBox1->Text;
+		//MyForm1^ obj = gcnew MyForm1(User_Name);
+		MyForm1^ Menu = gcnew MyForm1(User_Name);
 		Menu->Show();
 		MyForm::Hide();
+		}
+		else {
+			MessageBox::Show("Не введено ім'я користувача", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+		
 	}
 	private: System::Void MyForm_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
 		Application::Exit();
@@ -147,6 +164,8 @@ namespace TangramTetris {
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	Sounds sd;
 	sd.Wind();
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

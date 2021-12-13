@@ -19,13 +19,13 @@ namespace TangramTetris {
 	public ref class MyForm1 : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm1(void)
+
+		String^ User_Name;
+
+		MyForm1(String^ User_Name)
 		{
 			InitializeComponent();
-
-			//
-			//TODO: добавьте код конструктора
-			//
+			this->User_Name = User_Name;
 		}
 
 	protected:
@@ -182,7 +182,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	/*MyForm2^ Level_Select = gcnew MyForm2();
 	Level_Select->Show();
 	MyForm1::Hide();*/
-	MyForm3^ Perehid = gcnew MyForm3();
+	MyForm3^ Perehid = gcnew MyForm3(User_Name);
 	Perehid->Show();
 	MyForm1::Hide();
 }

@@ -16,12 +16,13 @@ namespace TangramTetris {
 	public ref class MyForm3 : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm3(void)
+
+		String^ User_Name;
+
+		MyForm3(String^ User_Name)
 		{
 			InitializeComponent();
-			//
-			//TODO: добавьте код конструктора
-			//
+			this->User_Name = User_Name;
 		}
 
 	protected:
@@ -94,7 +95,7 @@ namespace TangramTetris {
 	private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
 		count++;
 		if (count == 30) {
-			MyForm2^ Level_Select = gcnew MyForm2();
+			MyForm2^ Level_Select = gcnew MyForm2(User_Name);
 			Level_Select->Show();
 			MyForm3::Hide();
 		}
