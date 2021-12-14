@@ -281,12 +281,29 @@ namespace TangramTetris {
 
 
 		for (int ii = 0; ii < size; ii++)
-			if (mas[ii][1][mas[ii][1].size() - 1] - 48 == level_n) {
-				mas_l[level_s][0] = mas[ii][0];
-				mas_l[level_s][1] = mas[ii][1];
-				mas_l[level_s][2] = mas[ii][2];
-				level_s++;
+			if (mas[ii][1][0] == 'L') {
+				if (mas[ii][1][mas[ii][1].size() - 1] - 48 == level_n) {
+					mas_l[level_s][0] = mas[ii][0];
+					mas_l[level_s][1] = mas[ii][1];
+					mas_l[level_s][2] = mas[ii][2];
+					level_s++;
+				}
 			}
+			else if (mas[ii][1][0] == 'A') {
+				if (mas[ii][1][mas[ii][1].size() - 1] - 48+5 == level_n) {
+					mas_l[level_s][0] = mas[ii][0];
+					mas_l[level_s][1] = mas[ii][1];
+					mas_l[level_s][2] = mas[ii][2];
+					level_s++;
+				}
+			}
+			else
+				if (mas[ii][1][mas[ii][1].size() - 1] - 48+10 == level_n) {
+					mas_l[level_s][0] = mas[ii][0];
+					mas_l[level_s][1] = mas[ii][1];
+					mas_l[level_s][2] = mas[ii][2];
+					level_s++;
+				}
 
 		listBox1->Items->Clear();
 		int min = 99999, min_i;
@@ -297,21 +314,12 @@ namespace TangramTetris {
 					min_i = ii;
 					min = stoi(mas_l[ii][2]);
 				}
-			s = mas_l[min_i][0] + " " + mas_l[min_i][1] + " " + mas_l[min_i][2];
+			s = mas_l[min_i][0] + " " + mas_l[min_i][2];
 			rah = gcnew System::String(s.c_str());
 			listBox1->Items->Add(rah);
 			mas_l[min_i][2] = "99999";
 			min = 99999;
 		}
-		
-		/*listBox1->Items->Clear();
-		for (int w = 0; w < level_s; w++) {
-			for (int e = 0; e < 3; e++) {
-				rah = gcnew System::String(mas_l[w][e].c_str());
-				listBox1->Items->Add(rah);
-			}
-		}*/
-
 
 		for (i = 0; i < size; i++)
 			delete[] mas[i];
