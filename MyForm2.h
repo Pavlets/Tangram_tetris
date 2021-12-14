@@ -584,31 +584,48 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	
 	check_erorr checker;
 	checker.Xml_Check();
+	Level = 1;
 	if (checker.get_Xmli()) {
-		Image^ img_back = Image::FromFile("Pictures/B1.png");
-		Level = 1;
-		GetData obj;
-		ReadXML(&obj);
 
-		MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
-		Level1->Show();
+		checker.picture_checker(Level);
+		if (checker.get_Picturei()) {
+			Image^ img_back = Image::FromFile("Pictures/B1.png");
+
+			GetData obj;
+			ReadXML(&obj);
+
+			MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+			Level1->Show();
+		}
+		else {
+			MessageBox::Show("Не вдалось відкрити зображення фону", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+
 	}
 	else {
 		MessageBox::Show("Не вдалось відкрити файл", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
-
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	check_erorr checker;
 	checker.Xml_Check();
+	Level = 2;
 	if (checker.get_Xmli()) {
-		Image^ img_back = Image::FromFile("Pictures/B1.png");
-		Level = 2;
-		GetData obj;
-		ReadXML(&obj);
 
-		MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
-		Level1->Show();
+		checker.picture_checker(Level);
+		if (checker.get_Picturei()) {
+			Image^ img_back = Image::FromFile("Pictures/B1.png");
+
+			GetData obj;
+			ReadXML(&obj);
+
+			MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+			Level1->Show();
+		}
+		else {
+			MessageBox::Show("Не вдалось відкрити зображення фону", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+
 	}
 	else {
 		MessageBox::Show("Не вдалось відкрити файл", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
@@ -618,19 +635,27 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	check_erorr checker;
 	checker.Xml_Check();
+	Level = 3;
 	if (checker.get_Xmli()) {
-		Image^ img_back = Image::FromFile("Pictures/B1.png");
-		Level = 3;
-		GetData obj;
-		ReadXML(&obj);
 
-		MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
-		Level1->Show();
+		checker.picture_checker(Level);
+		if (checker.get_Picturei()) {
+			Image^ img_back = Image::FromFile("Pictures/B1.png");
+
+			GetData obj;
+			ReadXML(&obj);
+
+			MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+			Level1->Show();
+		}
+		else {
+			MessageBox::Show("Не вдалось відкрити зображення фону", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+
 	}
 	else {
 		MessageBox::Show("Не вдалось відкрити файл", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
-
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	check_erorr checker;
@@ -661,99 +686,148 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	check_erorr checker;
 	checker.Xml_Check();
+	Level = 5;
 	if (checker.get_Xmli()) {
-		Image^ img_back = Image::FromFile("Pictures/B1.png");
-		Level = 5;
-		GetData obj;
-		ReadXML(&obj);
 
-		MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
-		Level1->Show();
+		checker.picture_checker(Level);
+		if (checker.get_Picturei()) {
+			Image^ img_back = Image::FromFile("Pictures/B1.png");
+
+			GetData obj;
+			ReadXML(&obj);
+
+			MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+			Level1->Show();
+		}
+		else {
+			MessageBox::Show("Не вдалось відкрити зображення фону", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+
 	}
 	else {
 		MessageBox::Show("Не вдалось відкрити файл", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
-
 }
 private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
 	check_erorr checker;
 	checker.Xml_Check();
+	Level = 6;
 	if (checker.get_Xmli()) {
-		Image^ img_back = Image::FromFile("Pictures/B2.png");
-		Level = 6;
-		GetData obj;
-		ReadXML(&obj);
 
-		MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
-		Level1->Show();
+		checker.picture_checker(Level);
+		if (checker.get_Picturei()) {
+			Image^ img_back = Image::FromFile("Pictures/B2.png");
+
+			GetData obj;
+			ReadXML(&obj);
+
+			MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+			Level1->Show();
+		}
+		else {
+			MessageBox::Show("Не вдалось відкрити зображення фону", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+
 	}
 	else {
 		MessageBox::Show("Не вдалось відкрити файл", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
-
 }
 private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
 	check_erorr checker;
 	checker.Xml_Check();
+	Level = 7;
 	if (checker.get_Xmli()) {
-		Image^ img_back = Image::FromFile("Pictures/B2.png");
-		Level = 7;
-		GetData obj;
-		ReadXML(&obj);
 
-		MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
-		Level1->Show();
+		checker.picture_checker(Level);
+		if (checker.get_Picturei()) {
+			Image^ img_back = Image::FromFile("Pictures/B2.png");
+
+			GetData obj;
+			ReadXML(&obj);
+
+			MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+			Level1->Show();
+		}
+		else {
+			MessageBox::Show("Не вдалось відкрити зображення фону", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+
 	}
 	else {
 		MessageBox::Show("Не вдалось відкрити файл", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
-
 }
 private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
 	check_erorr checker;
 	checker.Xml_Check();
+	Level = 8;
 	if (checker.get_Xmli()) {
-		Image^ img_back = Image::FromFile("Pictures/B2.png");
-		Level = 8;
-		GetData obj;
-		ReadXML(&obj);
 
-		MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
-		Level1->Show();
+		checker.picture_checker(Level);
+		if (checker.get_Picturei()) {
+			Image^ img_back = Image::FromFile("Pictures/B2.png");
+
+			GetData obj;
+			ReadXML(&obj);
+
+			MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+			Level1->Show();
+		}
+		else {
+			MessageBox::Show("Не вдалось відкрити зображення фону", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+
 	}
 	else {
 		MessageBox::Show("Не вдалось відкрити файл", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
-
 }
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 	check_erorr checker;
 	checker.Xml_Check();
+	Level = 9;
 	if (checker.get_Xmli()) {
-		Image^ img_back = Image::FromFile("Pictures/B2.png");
-		Level = 9;
-		GetData obj;
-		ReadXML(&obj);
 
-		MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
-		Level1->Show();
+		checker.picture_checker(Level);
+		if (checker.get_Picturei()) {
+			Image^ img_back = Image::FromFile("Pictures/B2.png");
+
+			GetData obj;
+			ReadXML(&obj);
+
+			MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+			Level1->Show();
+		}
+		else {
+			MessageBox::Show("Не вдалось відкрити зображення фону", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+
 	}
 	else {
 		MessageBox::Show("Не вдалось відкрити файл", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
-
 }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 	check_erorr checker;
 	checker.Xml_Check();
+	Level = 10;
 	if (checker.get_Xmli()) {
-		Image^ img_back = Image::FromFile("Pictures/B2.png");
-		Level = 10;
-		GetData obj;
-		ReadXML(&obj);
 
-		MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
-		Level1->Show();
+		checker.picture_checker(Level);
+		if (checker.get_Picturei()) {
+			Image^ img_back = Image::FromFile("Pictures/B2.png");
+
+			GetData obj;
+			ReadXML(&obj);
+
+			MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+			Level1->Show();
+		}
+		else {
+			MessageBox::Show("Не вдалось відкрити зображення фону", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+
 	}
 	else {
 		MessageBox::Show("Не вдалось відкрити файл", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
@@ -763,19 +837,27 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
 	check_erorr checker;
 	checker.Xml_Check();
+	Level = 11;
 	if (checker.get_Xmli()) {
-		Image^ img_back = Image::FromFile("Pictures/B3.png");
-		Level = 11;
-		GetData obj;
-		ReadXML(&obj);
 
-		MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
-		Level1->Show();
+		checker.picture_checker(Level);
+		if (checker.get_Picturei()) {
+			Image^ img_back = Image::FromFile("Pictures/B3.png");
+
+			GetData obj;
+			ReadXML(&obj);
+
+			MyForm6^ Level1 = gcnew MyForm6(User_Name, Level_Name, img_back, obj.Get_Field_Size(), Field, obj.Get_F_1(), obj.Get_F_2(), obj.Get_F_3(), obj.Get_F_4(), obj.Get_F_5(), obj.Get_F_6(), obj.Get_F_7());
+			Level1->Show();
+		}
+		else {
+			MessageBox::Show("Не вдалось відкрити зображення фону", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+
 	}
 	else {
 		MessageBox::Show("Не вдалось відкрити файл", "Помилка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
-
 }
 };
 }

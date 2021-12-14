@@ -36,9 +36,23 @@ public:
 		else
 			set_Picturei(false);
 	}
+
+	bool get_rah()
+	{
+		return rah_indikator;
+	}
+
+	void rah_checker(int rah)
+	{
+		if (rah == 6000)
+			set_rahi(true);
+		else
+			set_rahi(false);
+	}
 private:
 	bool Xml_indikator;
 	bool Picture_indicator;
+	bool rah_indikator;
 
 	void set_Xmli(bool count) {
 		Xml_indikator = count;
@@ -46,5 +60,9 @@ private:
 
 	void set_Picturei(bool count) {
 		Picture_indicator = count;
+	}
+
+	void set_rahi(bool count) {
+		rah_indikator = count;
 	}
 };
