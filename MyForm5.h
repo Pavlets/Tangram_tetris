@@ -51,60 +51,60 @@ namespace TangramTetris {
 				float latitude = float.Parse(read[2]);
 			}*/
 
-			std::string User_name;
-			std::string Level_name;
-			std::string Rah;
-			std::string line;
-			String^ user_name;
-			String^ level_name;
-			String^ rah;
-			int i = 0;
+			//std::string User_name;
+			//std::string Level_name;
+			//std::string Rah;
+			//std::string line;
+			//String^ user_name;
+			//String^ level_name;
+			//String^ rah;
+			//int i = 0;
 
-			std::ifstream file("records.csv");
-			while (getline(file, line))
-			{
-				i++;
-			}
-			file.close();
+			//std::ifstream file("records.csv");
+			//while (getline(file, line))
+			//{
+			//	i++;
+			//}
+			//file.close();
 
-			const int size = i;
-			std::string** mas = new std::string*[size];
-			for (int q = 0; q < size; q++)
-				mas[q] = new std::string [3];
+			//const int size = i;
+			//std::string** mas = new std::string*[size];
+			//for (int q = 0; q < size; q++)
+			//	mas[q] = new std::string [3];
 
-			std::ifstream file1("records.csv");
-			int j = 0;
-			while (j < i)
-			{
-				std::getline(file1, User_name, ',');
-				user_name = gcnew System::String(User_name.c_str());
-				//textBox1->Text += user_name + " ";
-				//user_name = "";
-				mas[j][0] = User_name;
+			//std::ifstream file1("records.csv");
+			//int j = 0;
+			//while (j < i)
+			//{
+			//	std::getline(file1, User_name, ',');
+			//	user_name = gcnew System::String(User_name.c_str());
+			//	//textBox1->Text += user_name + " ";
+			//	//user_name = "";
+			//	mas[j][0] = User_name;
 
-				std::getline(file1, Level_name, ',');
-				level_name = gcnew System::String(Level_name.c_str());
-				//textBox1->Text += level_name + " ";
-				//level_name = "";
-				mas[j][1] = Level_name;
+			//	std::getline(file1, Level_name, ',');
+			//	level_name = gcnew System::String(Level_name.c_str());
+			//	//textBox1->Text += level_name + " ";
+			//	//level_name = "";
+			//	mas[j][1] = Level_name;
 
-				std::getline(file1, Rah);
-				rah = gcnew System::String(Rah.c_str());
-				//textBox1->Text += rah +"\r\n";
-				//rah = "";
-				mas[j][2] = Rah;
+			//	std::getline(file1, Rah);
+			//	rah = gcnew System::String(Rah.c_str());
+			//	//textBox1->Text += rah +"\r\n";
+			//	//rah = "";
+			//	mas[j][2] = Rah;
 
-				j++;
-			}
-			file1.close();
+			//	j++;
+			//}
+			//file1.close();
 
-			for (int w = 0; w < size; w++) {
-				for (int e = 0; e < 3; e++) {
-					rah = gcnew System::String(mas[w][e].c_str());
-					listBox1->Items->Add(rah);
-				}
-				//listBox1->Text += "\r\n";
-			}
+			//for (int w = 0; w < size; w++) {
+			//	for (int e = 0; e < 3; e++) {
+			//		rah = gcnew System::String(mas[w][e].c_str());
+			//		listBox1->Items->Add(rah);
+			//	}
+			//	//listBox1->Text += "\r\n";
+			//}
 		}
 
 	protected:
@@ -184,6 +184,7 @@ namespace TangramTetris {
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(160, 24);
 			this->comboBox1->TabIndex = 2;
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm5::comboBox1_SelectedIndexChanged);
 			// 
 			// listBox1
 			// 
@@ -224,5 +225,100 @@ namespace TangramTetris {
 		label1->Parent = pictureBox1;
 		Read_Record();
 	}
-	};
+	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		std::string User_name;
+		std::string Level_name;
+		std::string Rah;
+		std::string line;
+		String^ user_name;
+		String^ level_name;
+		String^ rah;
+		int i = 0;
+
+		std::ifstream file("records.csv");
+		while (getline(file, line))
+		{
+			i++;
+		}
+		file.close();
+
+		const int size = i;
+		std::string** mas = new std::string * [size];
+		for (int q = 0; q < size; q++)
+			mas[q] = new std::string[3];
+
+		std::ifstream file1("records.csv");
+		int j = 0;
+		while (j < i)
+		{
+			std::getline(file1, User_name, ',');
+			user_name = gcnew System::String(User_name.c_str());
+			//textBox1->Text += user_name + " ";
+			//user_name = "";
+			mas[j][0] = User_name;
+
+			std::getline(file1, Level_name, ',');
+			level_name = gcnew System::String(Level_name.c_str());
+			//textBox1->Text += level_name + " ";
+			//level_name = "";
+			mas[j][1] = Level_name;
+
+			std::getline(file1, Rah);
+			rah = gcnew System::String(Rah.c_str());
+			//textBox1->Text += rah +"\r\n";
+			//rah = "";
+			mas[j][2] = Rah;
+
+			j++;
+		}
+		file1.close();
+
+		int level_n = comboBox1->SelectedIndex + 1;
+		int level_s = 0;
+		std::string** mas_l = new std::string * [size];
+		for (int q = 0; q < size; q++)
+			mas_l[q] = new std::string[3];
+
+
+		for (int ii = 0; ii < size; ii++)
+			if (mas[ii][1][mas[ii][1].size() - 1] - 48 == level_n) {
+				mas_l[level_s][0] = mas[ii][0];
+				mas_l[level_s][1] = mas[ii][1];
+				mas_l[level_s][2] = mas[ii][2];
+				level_s++;
+			}
+
+		listBox1->Items->Clear();
+		int min = 99999, min_i;
+		std::string s;
+		for (int jj = 0; jj < level_s; jj++) {
+			for (int ii = 0; ii < level_s; ii++)
+				if (stoi(mas_l[ii][2]) < min) {
+					min_i = ii;
+					min = stoi(mas_l[ii][2]);
+				}
+			s = mas_l[min_i][0] + " " + mas_l[min_i][1] + " " + mas_l[min_i][2];
+			rah = gcnew System::String(s.c_str());
+			listBox1->Items->Add(rah);
+			mas_l[min_i][2] = "99999";
+			min = 99999;
+		}
+		
+		/*listBox1->Items->Clear();
+		for (int w = 0; w < level_s; w++) {
+			for (int e = 0; e < 3; e++) {
+				rah = gcnew System::String(mas_l[w][e].c_str());
+				listBox1->Items->Add(rah);
+			}
+		}*/
+
+
+		for (i = 0; i < size; i++)
+			delete[] mas[i];
+		delete[] mas;
+		for (i = 0; i < size; i++)
+			delete[] mas_l[i];
+		delete[] mas_l;
+	}
+};
 }
