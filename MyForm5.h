@@ -297,13 +297,12 @@ namespace TangramTetris {
 					level_s++;
 				}
 			}
-			else
-				if (mas[ii][1][mas[ii][1].size() - 1] - 48+10 == level_n) {
-					mas_l[level_s][0] = mas[ii][0];
-					mas_l[level_s][1] = mas[ii][1];
-					mas_l[level_s][2] = mas[ii][2];
-					level_s++;
-				}
+			else if (level_n == 11 && mas[ii][1][0] == 'F') {
+				mas_l[level_s][0] = mas[ii][0];
+				mas_l[level_s][1] = mas[ii][1];
+				mas_l[level_s][2] = mas[ii][2];
+				level_s++;
+			}
 
 		listBox1->Items->Clear();
 		int min = 99999, min_i;
