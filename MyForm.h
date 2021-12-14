@@ -144,7 +144,6 @@ namespace TangramTetris {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		if(textBox1->Text != "") {
 			User_Name = textBox1->Text;
-		//MyForm1^ obj = gcnew MyForm1(User_Name);
 		MyForm1^ Menu = gcnew MyForm1(User_Name);
 		Menu->Show();
 		MyForm::Hide();

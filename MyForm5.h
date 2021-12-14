@@ -26,86 +26,6 @@ namespace TangramTetris {
 			//TODO: добавьте код конструктора
 			//
 		}
-		void Read_Record()
-		{
-			/*StreamReader^ reader = File::OpenText("records.csv");
-			string totalData[reader->ReadAllLines()->Length];
-			totalData = reader.ReadLine()->Split(',');
-			while (!reader.EndOfStream)
-			{
-				totalData = reader.ReadLine().Split(',');
-				//dataTable.Rows.Add(totalData[0], totalData[1], totalData[2]);
-			}*/
-
-			/*string read[];
-			char[] seperators = { ',' };
-
-			StreamReader sr = new StreamReader("D:/xxx.csv");
-
-			string data = sr.ReadLine();
-
-			while ((data = sr.ReadLine()) != null)
-			{
-				read = data.Split(seperators, StringSplitOptions.RemoveEmptyEntries);
-				float longitude = float.Parse(read[1]);
-				float latitude = float.Parse(read[2]);
-			}*/
-
-			//std::string User_name;
-			//std::string Level_name;
-			//std::string Rah;
-			//std::string line;
-			//String^ user_name;
-			//String^ level_name;
-			//String^ rah;
-			//int i = 0;
-
-			//std::ifstream file("records.csv");
-			//while (getline(file, line))
-			//{
-			//	i++;
-			//}
-			//file.close();
-
-			//const int size = i;
-			//std::string** mas = new std::string*[size];
-			//for (int q = 0; q < size; q++)
-			//	mas[q] = new std::string [3];
-
-			//std::ifstream file1("records.csv");
-			//int j = 0;
-			//while (j < i)
-			//{
-			//	std::getline(file1, User_name, ',');
-			//	user_name = gcnew System::String(User_name.c_str());
-			//	//textBox1->Text += user_name + " ";
-			//	//user_name = "";
-			//	mas[j][0] = User_name;
-
-			//	std::getline(file1, Level_name, ',');
-			//	level_name = gcnew System::String(Level_name.c_str());
-			//	//textBox1->Text += level_name + " ";
-			//	//level_name = "";
-			//	mas[j][1] = Level_name;
-
-			//	std::getline(file1, Rah);
-			//	rah = gcnew System::String(Rah.c_str());
-			//	//textBox1->Text += rah +"\r\n";
-			//	//rah = "";
-			//	mas[j][2] = Rah;
-
-			//	j++;
-			//}
-			//file1.close();
-
-			//for (int w = 0; w < size; w++) {
-			//	for (int e = 0; e < 3; e++) {
-			//		rah = gcnew System::String(mas[w][e].c_str());
-			//		listBox1->Items->Add(rah);
-			//	}
-			//	//listBox1->Text += "\r\n";
-			//}
-		}
 
 	protected:
 		/// <summary>
@@ -223,7 +143,6 @@ namespace TangramTetris {
 #pragma endregion
 	private: System::Void MyForm5_Load(System::Object^ sender, System::EventArgs^ e) {
 		label1->Parent = pictureBox1;
-		//Read_Record();
 	}
 	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		std::string User_name;

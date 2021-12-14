@@ -18,35 +18,6 @@ namespace TangramTetris {
 	/// Сводка для MyForm6
 	/// </summary>
 	
-	/*void Write_Record(String^ User_Name, String^ Level_Name, int Rah)
-	{
-		bool First_Record;
-		/*ifstream checker("records.csv");
-		if (checker.is_open()) {
-			First_Record = false;
-		}
-		else {
-			First_Record = true;
-		}
-		checker.close();*/
-		/*StreamReader^ stream = File::OpenText("records.csv");
-		if (stream) {
-			First_Record = false;
-		}
-		else {
-			First_Record = true;
-		}
-
-		//ofstream writer("records.csv", ios_base::app);
-		String^ Data = User_Name + ", " + Level_Name + ", " + Rah.ToString();
-		if(First_Record = true) {
-			File::AppendAllText("records.csv", Data);
-		}
-		else {
-			File::AppendAllText("records.csv", + '\n' + Data);
-		}
-	}*/
-	
 	public ref class MyForm6 : public System::Windows::Forms::Form
 	{
 	public:
@@ -71,32 +42,8 @@ namespace TangramTetris {
 
 		void Write_Record(String^ User_Name, String^ Level_Name, int Rah)
 		{
-			//bool First_Record = true;
-			/*ifstream checker("records.csv");
-			if (checker.is_open()) {
-				First_Record = false;
-			}
-			else {
-				First_Record = true;
-			}
-			checker.close();*/
-			/*StreamReader^ checker = File::OpenText("records.csv");
-			if (checker) {
-				//First_Record = false;
-				First_Record = true;
-			}
-			else {
-				//First_Record = true;
-			}
-			checker->Close();
-			*/
 			String^ Data = User_Name + "," + Level_Name + "," + Rah.ToString();
-			//if (First_Record = true) {
-				File::AppendAllText("records.csv", Data + "\n");
-			//}
-			//else {
-			//	File::AppendAllText("records.csv", +'\n' + Data);
-			//}
+			File::AppendAllText("records.csv", Data + "\n");
 		}
 
 		MyForm6(String^ User_Name, String^ level_name, Image^ img_back, int field_size, String^ field, int F_1,  int F_2, int F_3, int F_4, int F_5, int F_6, int F_7)

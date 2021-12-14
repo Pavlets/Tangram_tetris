@@ -179,9 +179,6 @@ namespace TangramTetris {
 		Application::Exit();
 	}
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	/*MyForm2^ Level_Select = gcnew MyForm2();
-	Level_Select->Show();
-	MyForm1::Hide();*/
 	MyForm3^ Perehid = gcnew MyForm3(User_Name);
 	Perehid->Show();
 	MyForm1::Hide();

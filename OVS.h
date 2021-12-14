@@ -23,7 +23,7 @@ public:
 	}
 
 	void picture_checker(int level) {
-		Image^ img_back; //= Image::FromFile("Pictures/B1.png");
+		Image^ img_back;
 		if(level <=5)
 			img_back = Image::FromFile("Pictures/B1.png");
 		if(level > 5 && level < 11)
