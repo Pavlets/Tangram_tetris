@@ -223,7 +223,7 @@ namespace TangramTetris {
 #pragma endregion
 	private: System::Void MyForm5_Load(System::Object^ sender, System::EventArgs^ e) {
 		label1->Parent = pictureBox1;
-		Read_Record();
+		//Read_Record();
 	}
 	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		std::string User_name;
@@ -253,20 +253,14 @@ namespace TangramTetris {
 		{
 			std::getline(file1, User_name, ',');
 			user_name = gcnew System::String(User_name.c_str());
-			//textBox1->Text += user_name + " ";
-			//user_name = "";
 			mas[j][0] = User_name;
 
 			std::getline(file1, Level_name, ',');
 			level_name = gcnew System::String(Level_name.c_str());
-			//textBox1->Text += level_name + " ";
-			//level_name = "";
 			mas[j][1] = Level_name;
 
 			std::getline(file1, Rah);
 			rah = gcnew System::String(Rah.c_str());
-			//textBox1->Text += rah +"\r\n";
-			//rah = "";
 			mas[j][2] = Rah;
 
 			j++;

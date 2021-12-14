@@ -129,6 +129,8 @@
     <ClCompile Include="Sounds.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Field_h.h" />
+    <ClInclude Include="Figures_h.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
