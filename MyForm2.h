@@ -499,7 +499,7 @@ namespace TangramTetris {
 
 		}
 #pragma endregion
-
+		Sounds sd;
 private: System::Void MyForm2_Load(System::Object^ sender, System::EventArgs^ e) {
 	pictureBox2->Parent = pictureBox1;
 	pictureBox3->Parent = pictureBox1;
@@ -528,55 +528,42 @@ private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ 
 	Records->Show();
 }
 private: System::Void button1_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button2_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button3_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button4_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button5_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button10_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button9_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button8_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button7_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button6_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button11_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button13_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button12_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {

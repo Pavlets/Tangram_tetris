@@ -141,6 +141,7 @@ namespace TangramTetris {
 
 		}
 #pragma endregion
+		Sounds sd;
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		if(textBox1->Text != "") {
 			User_Name = textBox1->Text;
@@ -157,11 +158,9 @@ namespace TangramTetris {
 		Application::Exit();
 	}
 	private: System::Void button1_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-		Sounds sd;
 		sd.menuin();
 	}
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.Wind();
 }
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {

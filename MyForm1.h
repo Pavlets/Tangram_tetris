@@ -172,6 +172,7 @@ namespace TangramTetris {
 
 		}
 #pragma endregion
+		Sounds sd;
 	private: System::Void MyForm1_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
 		Application::Exit();
 	}
@@ -197,15 +198,12 @@ private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e)
 }
 
 private: System::Void button1_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button3_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 private: System::Void button4_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Sounds sd;
 	sd.menuin();
 }
 };
