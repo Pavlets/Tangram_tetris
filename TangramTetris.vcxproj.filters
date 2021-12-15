@@ -59,7 +59,7 @@
     <ClInclude Include="MyForm6.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
-    <ClInclude Include="main.h">
+    <ClInclude Include="XML.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
     <ClInclude Include="Sounds.h">

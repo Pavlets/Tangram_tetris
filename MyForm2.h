@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "MyForm5.h"
 #include "MyForm6.h"
-#include "main.h"
+#include "XML.h"
 #include "Sounds.h"
 #include "OVS.h"
 
@@ -45,8 +45,7 @@ namespace TangramTetris {
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
 	private: System::Windows::Forms::PictureBox^ pictureBox5;
 
-		   int Level;
-
+		int Level;
 		void ReadXML(GetData* obj1)
 		{
 			XmlTextReader reader("xmlfile.xml");
