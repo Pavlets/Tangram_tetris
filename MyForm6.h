@@ -2,6 +2,8 @@
 #include <iostream>
 #include "windows.h"
 #include "OVS.h"
+#include "Field_h.h"
+#include "Figures_h.h"
 using namespace std;
 
 namespace TangramTetris {
