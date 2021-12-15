@@ -59,22 +59,22 @@
     <ClInclude Include="MyForm6.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
-    <ClInclude Include="XML.h">
-      <Filter>Файлы ресурсов</Filter>
-    </ClInclude>
     <ClInclude Include="Sounds.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="MyForm3.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
-    <ClInclude Include="OVS.h">
-      <Filter>Файлы ресурсов</Filter>
-    </ClInclude>
     <ClInclude Include="Field_h.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Figures_h.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="OVS.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="XML.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
