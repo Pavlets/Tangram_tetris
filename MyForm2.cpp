@@ -1,5 +1,5 @@
 #include "MyForm2.h"
-#include "MyForm4.h"
+//#include "MyForm4.h"
 #include "MyForm.h"
 
 inline System::Void TangramTetris::MyForm2::button12_Click(System::Object^ sender, System::EventArgs^ e) {
